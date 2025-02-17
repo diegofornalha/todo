@@ -1,0 +1,2 @@
+2025-02-16 23:35:47,076 - streamlit_app - ERROR - Erro ao processar documentos: DocumentProcessor.__init__() missing 1 required positional argument: 'file_path'
+2025-02-16 23:38:22,953 - streamlit_app - ERROR - Erro ao processar documentos: [Errno 2] No such file or directory: 'temp/Origem.pdf'
