@@ -1,8 +1,8 @@
 from langchain_community.document_loaders import PyPDFLoader
 import os
 
-# Caminho para o PDF
-pdf_path = "content/Origem.pdf"
+# Caminho para o PDF (ajustado para a nova estrutura)
+pdf_path = "../content/Origem.pdf"
 
 try:
     # Verifica se o arquivo existe

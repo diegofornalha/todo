@@ -1,11 +1,12 @@
 import streamlit as st
-from core.document_processor import DocumentProcessor
-from core.qa_chain import QAChain
-from models.groq_handler import GroqHandler
+from src.core.document_processor import DocumentProcessor
+from src.core.qa_chain import QAChain
+from src.models.groq_handler import GroqHandler
 import os
 from tempfile import NamedTemporaryFile
 import logging
-from utils.logging_config import setup_logger
+from src.utils.logging_config import setup_logger
+import re
 
 # Configuração do logger
 logger = setup_logger('streamlit_app', 'logs/app.log')
@@ -58,6 +59,20 @@ def process_document(uploaded_file):
         st.error(f"Erro ao processar o documento: {str(e)}")
         return None
 
+# Função para extrair pensamento e resposta
+def extract_thought_and_answer(text):
+    # Procura por conteúdo entre tags <think> e </think>
+    thought_match = re.search(r'<think>(.*?)</think>', text, re.DOTALL)
+    
+    if thought_match:
+        thought = thought_match.group(1).strip()
+        # Remove a parte do pensamento do texto original para obter apenas a resposta
+        answer = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
+        return thought, answer
+    else:
+        # Se não encontrar tags de pensamento, retorna None para pensamento e o texto original como resposta
+        return None, text.strip()
+
 # Inicializa o sistema de QA
 qa_system = initialize_qa_system()
 
@@ -88,6 +103,9 @@ with st.sidebar:
 # Área principal para perguntas
 st.header("Faça sua Pergunta")
 
+# Checkbox para mostrar/ocultar pensamento
+show_thought = st.checkbox("Mostrar processo de pensamento", value=False)
+
 # Input da pergunta
 question = st.text_input("Digite sua pergunta:")
 
@@ -100,9 +118,19 @@ if question:
                 # Processa a pergunta
                 result = qa_system.query(question)
                 
+                # Extrai pensamento e resposta
+                thought, answer = extract_thought_and_answer(result['resposta'])
+                
                 # Exibe a resposta
                 st.subheader("Resposta:")
-                st.write(result['resposta'])
+                
+                # Mostra o pensamento se a opção estiver marcada e existir pensamento
+                if show_thought and thought:
+                    with st.expander("Processo de Pensamento", expanded=True):
+                        st.markdown(thought)
+                
+                # Mostra a resposta final
+                st.markdown(answer)
                 
                 # Exibe o status
                 if result['status'] == 'sucesso':

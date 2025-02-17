@@ -1,0 +1,27 @@
+2025-02-17 02:26:41 - groq_handler - INFO - Carregando variáveis de ambiente...
+2025-02-17 02:26:41 - groq_handler - INFO - Inicializando modelo Groq: deepseek-r1-distill-llama-70b
+2025-02-17 02:26:41 - groq_handler - INFO - Modelo Groq inicializado com sucesso
+2025-02-17 02:27:11 - groq_handler - INFO - Processando pergunta: a jornada do marketing
+2025-02-17 02:27:13 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 02:28:31 - groq_handler - INFO - Processando pergunta: quero saber sobre alcantara
+2025-02-17 02:28:33 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 02:31:04 - groq_handler - INFO - Carregando variáveis de ambiente...
+2025-02-17 02:31:04 - groq_handler - INFO - Inicializando modelo Groq: deepseek-r1-distill-llama-70b
+2025-02-17 02:31:04 - groq_handler - INFO - Modelo Groq inicializado com sucesso
+2025-02-17 02:31:50 - groq_handler - INFO - Processando pergunta: a jornada do marketing 
+2025-02-17 02:31:53 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 02:34:39 - groq_handler - INFO - Carregando variáveis de ambiente...
+2025-02-17 02:34:39 - groq_handler - INFO - Inicializando modelo Groq: deepseek-r1-distill-llama-70b
+2025-02-17 02:34:39 - groq_handler - INFO - Modelo Groq inicializado com sucesso
+2025-02-17 02:35:03 - groq_handler - INFO - Processando pergunta: a jornada do marketing
+2025-02-17 02:35:05 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 02:35:16 - groq_handler - INFO - Processando pergunta: a jornada do marketing
+2025-02-17 02:35:17 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 02:35:22 - groq_handler - INFO - Processando pergunta: a jornada do marketing
+2025-02-17 02:35:24 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 02:35:28 - groq_handler - INFO - Processando pergunta: a jornada do marketing
+2025-02-17 02:35:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 02:35:37 - groq_handler - INFO - Processando pergunta: a jornada do marketing
+2025-02-17 02:35:39 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 02:35:43 - groq_handler - INFO - Processando pergunta: a jornada do marketing
+2025-02-17 02:35:45 - groq_handler - INFO - Resposta processada com sucesso

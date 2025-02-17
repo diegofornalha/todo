@@ -1,4 +1,4 @@
-from vector_store import VectorStore
+from ..core.vector_store import VectorStore
 
 try:
     print("Iniciando teste do VectorStore...")

@@ -95,7 +95,15 @@ class LLMHandler:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[
-                    {"role": "system", "content": "Você é um assistente especializado em responder perguntas com base em documentos fornecidos. Suas respostas devem ser precisas, concisas e baseadas apenas no contexto fornecido."},
+                    {"role": "system", "content": """Você é um assistente especializado em responder perguntas com base em documentos fornecidos.
+Suas respostas devem ser:
+1. Precisas e baseadas apenas no contexto fornecido
+2. Sempre em português do Brasil
+3. Concisas e diretas
+4. Profissionais mas acessíveis
+
+Se não encontrar a informação no contexto, responda apenas: "Não encontrei essa informação nos documentos fornecidos."
+"""},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.3,

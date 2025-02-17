@@ -2,10 +2,10 @@ from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage
 from dotenv import load_dotenv
 import os
-from logging_config import setup_logger
-from typing import Optional, Dict, Any
 import json
-from prompt_template import QA_PROMPT, DOCUMENT_PROMPT
+from typing import Optional, Dict, Any
+from ..utils.logging_config import setup_logger
+from ..config.prompt_templates import QA_PROMPT, DOCUMENT_PROMPT
 
 class GroqAPIError(Exception):
     """Exceção personalizada para erros relacionados à API do Groq."""
