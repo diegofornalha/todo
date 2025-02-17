@@ -82,31 +82,42 @@ def main():
                     os.makedirs(temp_dir, exist_ok=True)
                     
                     processed_files = []
+                    temp_paths = []  # Lista para armazenar caminhos temporários
+                    
+                    # Primeiro, salva todos os arquivos
                     for file in uploaded_files:
                         try:
-                            # Salva temporariamente o arquivo
                             temp_path = os.path.join(temp_dir, file.name)
+                            temp_paths.append(temp_path)
                             
                             with open(temp_path, "wb") as f:
                                 f.write(file.getvalue())
-                            
-                            # Processa o documento
+                                
+                        except Exception as e:
+                            logger.error(f"Erro ao salvar {file.name}: {str(e)}")
+                            st.error(f"Erro ao salvar {file.name}: {str(e)}")
+                            continue
+                    
+                    # Depois, processa todos os arquivos
+                    for temp_path in temp_paths:
+                        try:
                             processor = DocumentProcessor(file_path=temp_path)
                             docs = processor.process_pdf()
                             qa_chain.add_documents(docs)
                             
-                            processed_files.append(file.name)
+                            processed_files.append(os.path.basename(temp_path))
                             
                         except Exception as e:
-                            logger.error(f"Erro ao processar {file.name}: {str(e)}")
-                            st.error(f"Erro ao processar {file.name}: {str(e)}")
-                        finally:
-                            # Remove o arquivo temporário
+                            logger.error(f"Erro ao processar {temp_path}: {str(e)}")
+                            st.error(f"Erro ao processar {os.path.basename(temp_path)}: {str(e)}")
+                    
+                    # Por fim, remove os arquivos temporários
+                    for temp_path in temp_paths:
+                        try:
                             if os.path.exists(temp_path):
-                                try:
-                                    os.remove(temp_path)
-                                except Exception as e:
-                                    logger.error(f"Erro ao remover arquivo temporário {temp_path}: {str(e)}")
+                                os.remove(temp_path)
+                        except Exception as e:
+                            logger.error(f"Erro ao remover arquivo temporário {temp_path}: {str(e)}")
                     
                     if processed_files:
                         st.success(f"Arquivo(s) processado(s) com sucesso: {', '.join(processed_files)}")
