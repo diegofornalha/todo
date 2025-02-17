@@ -14,5 +14,4 @@ langchain-text-splitters>=0.0.1
 langchain-groq>=0.0.1
 langchain-huggingface>=0.0.1
 faiss-cpu>=1.7.4
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==2.2.0
+torch>=2.6.0
