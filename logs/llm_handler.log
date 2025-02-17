@@ -1,5 +1,0 @@
-2025-02-16 23:35:32,742 - llm_handler - INFO - LLMHandler inicializado com modelo: mixtral-8x7b-32768
-2025-02-16 23:38:01,492 - llm_handler - INFO - LLMHandler inicializado com modelo: mixtral-8x7b-32768
-2025-02-16 23:38:24,489 - llm_handler - INFO - Resposta gerada com sucesso
-2025-02-16 23:40:33,819 - llm_handler - INFO - LLMHandler inicializado com modelo: mixtral-8x7b-32768
-2025-02-16 23:40:55,234 - llm_handler - INFO - Resposta gerada com sucesso
