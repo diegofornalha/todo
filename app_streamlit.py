@@ -77,23 +77,39 @@ def main():
         if uploaded_files:
             with st.spinner("Processando documentos..."):
                 try:
+                    # Cria o diretório temp se não existir
+                    temp_dir = "temp"
+                    os.makedirs(temp_dir, exist_ok=True)
+                    
+                    processed_files = []
                     for file in uploaded_files:
-                        # Salva temporariamente o arquivo
-                        temp_path = f"temp/{file.name}"
-                        os.makedirs("temp", exist_ok=True)
-                        
-                        with open(temp_path, "wb") as f:
-                            f.write(file.getvalue())
-                        
-                        # Processa o documento
-                        processor = DocumentProcessor(file_path=temp_path)
-                        docs = processor.process_pdf()
-                        qa_chain.add_documents(docs)
-                        
-                        # Remove o arquivo temporário
-                        os.remove(temp_path)
-                        
-                    st.success(f"{len(uploaded_files)} documento(s) processado(s) com sucesso!")
+                        try:
+                            # Salva temporariamente o arquivo
+                            temp_path = os.path.join(temp_dir, file.name)
+                            
+                            with open(temp_path, "wb") as f:
+                                f.write(file.getvalue())
+                            
+                            # Processa o documento
+                            processor = DocumentProcessor(file_path=temp_path)
+                            docs = processor.process_pdf()
+                            qa_chain.add_documents(docs)
+                            
+                            processed_files.append(file.name)
+                            
+                        except Exception as e:
+                            logger.error(f"Erro ao processar {file.name}: {str(e)}")
+                            st.error(f"Erro ao processar {file.name}: {str(e)}")
+                        finally:
+                            # Remove o arquivo temporário
+                            if os.path.exists(temp_path):
+                                try:
+                                    os.remove(temp_path)
+                                except Exception as e:
+                                    logger.error(f"Erro ao remover arquivo temporário {temp_path}: {str(e)}")
+                    
+                    if processed_files:
+                        st.success(f"Arquivo(s) processado(s) com sucesso: {', '.join(processed_files)}")
                     
                 except Exception as e:
                     logger.error(f"Erro ao processar documentos: {str(e)}")
