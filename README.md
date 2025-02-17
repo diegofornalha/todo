@@ -117,8 +117,7 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 
 ## Roadmap
 
-- [ ] Implementar API REST
-- [ ] Adicionar suporte a mais modelos de linguagem
+- [ ] Implementar FASTAPI
 - [ ] Implementar cache de respostas
 - [ ] Adicionar dashboard de monitoramento
 - [ ] Suporte a mais formatos de documento

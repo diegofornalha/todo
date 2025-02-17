@@ -1,3 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ambientes virtuais
+venv/
+langgraph_env/
+ENV/
+env/
 .env
+
+# IDEs e editores
+.idea/
+.vscode/
+*.swp
+*.swo
 .DS_Store
-/logs
+.cursorignore
+
+# Logs e dados
+logs/
+*.log
+.langgraph_api/
+*.pckl
+*.pkl
+*.db
+*.sqlite3
+
+# Cache
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+
+# Arquivos específicos do projeto
+.env
+.env.local
+.env.*.local
+
+# Arquivos de build Docker
+.docker/
+docker-compose.override.yml
+
+# Outros
+*.pyc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
