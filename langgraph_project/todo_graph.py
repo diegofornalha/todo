@@ -20,7 +20,7 @@ class GraphState(TypedDict):
     next_step: str
     task_list: list[str]
     current_task: str | None
-    retrieval_qa: RetrievalQA | None  # Novo campo para o sistema RAG
+    retrieval_qa: RetrievalQA | None
 
 def create_todo_graph():
     """
@@ -45,17 +45,14 @@ def create_todo_graph():
         raise ValueError("GROQ_API_KEY não encontrada")
         
     model_name = os.getenv("MODEL_NAME", "mixtral-8x7b-32768")
-    llm = ChatGroq(
-        groq_api_key=groq_api_key,
-        model_name=model_name,
-        temperature=0.7
-    )
+    llm = GroqHandler(model_name=model_name)
+    llm.initialize()
     
     # Cria o grafo de estado
     workflow = StateGraph(GraphState)
     
     # Inicializa o sistema RAG
-    retrieval_qa = RetrievalQA(llm)
+    retrieval_qa = RetrievalQA(llm=llm)
     
     # Define os nós do grafo
     
