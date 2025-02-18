@@ -122,3 +122,121 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 - [ ] Adicionar dashboard de monitoramento
 - [ ] Suporte a mais formatos de documento
 - [ ] Melhorar a performance do processamento de documentos 
+
+# Chat RAG com Redis
+
+Este projeto implementa um sistema de Retrieval-Augmented Generation (RAG) com cache Redis para melhor performance.
+
+## Requisitos
+
+- Python 3.8+
+- Redis 6+
+- Dependências Python (ver `requirements.txt`)
+
+## Configuração
+
+1. Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
+
+2. Configure o Redis:
+
+- Copie o arquivo de configuração do Redis:
+```bash
+cp redis.conf.example redis.conf
+```
+
+- Edite o arquivo `redis.conf` conforme necessário:
+  - `port`: Porta do Redis (padrão: 6379)
+  - `requirepass`: Senha do Redis
+  - `maxmemory`: Limite de memória
+  - `maxmemory-policy`: Política de expiração
+
+3. Inicie o Redis com a configuração:
+```bash
+redis-server redis.conf
+```
+
+## Configuração do RAG
+
+O sistema RAG pode ser configurado através da classe `RAGConfig`:
+
+```python
+from langgraph_agente_vendedor.core.base_rag import RAGConfig
+
+config = RAGConfig(
+    # Configurações gerais
+    embeddings_model="sentence-transformers/all-MiniLM-L6-v2",
+    chunk_size=1000,
+    chunk_overlap=200,
+    max_documents=3,
+    similarity_threshold=0.7,
+    
+    # Configurações de cache
+    cache_enabled=True,
+    cache_type="redis",  # "redis" ou "file"
+    
+    # Configurações do Redis
+    redis_host="localhost",
+    redis_port=6379,
+    redis_password="sua_senha",
+    redis_db=0,
+    redis_prefix="rag:",
+    redis_ttl=3600  # 1 hora
+)
+```
+
+## Uso
+
+```python
+from langgraph_agente_vendedor.core.faiss_rag import FAISSRAGSystem
+
+# Inicializa o sistema
+rag = FAISSRAGSystem()
+rag.initialize(config)
+
+# Adiciona documentos
+documents = [
+    {
+        "content": "Texto do documento",
+        "metadata": {"source": "arquivo.txt"}
+    }
+]
+rag.add_documents(documents)
+
+# Faz uma consulta
+response = rag.query("Sua pergunta aqui?")
+print(response.answer)
+```
+
+## Cache Redis
+
+O sistema usa Redis para cache de respostas, oferecendo:
+
+- Cache distribuído
+- Expiração automática
+- Alta performance
+- Persistência opcional
+- Failback para cache em arquivo
+
+Se o Redis não estiver disponível, o sistema automaticamente usa cache em arquivo.
+
+## Testes
+
+Execute os testes com:
+```bash
+python -m pytest tests/ -v
+```
+
+## Contribuindo
+
+1. Fork o projeto
+2. Crie sua feature branch (`git checkout -b feature/nome`)
+3. Commit suas mudanças (`git commit -am 'Adiciona feature'`)
+4. Push para a branch (`git push origin feature/nome`)
+5. Crie um Pull Request
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.

@@ -10,8 +10,19 @@ class RAGConfig:
     chunk_overlap: int = 200
     max_documents: int = 3
     similarity_threshold: float = 0.7
+    
+    # Configurações de cache
     cache_enabled: bool = True
-    cache_dir: str = "cache/rag"
+    cache_type: str = "redis"  # "redis" ou "file"
+    cache_dir: str = "cache/rag"  # Para cache em arquivo
+    
+    # Configurações do Redis
+    redis_host: str = "localhost"
+    redis_port: int = 6379
+    redis_password: Optional[str] = None
+    redis_db: int = 0
+    redis_prefix: str = "rag:"
+    redis_ttl: int = 3600  # 1 hora
 
 @dataclass
 class RAGDocument:

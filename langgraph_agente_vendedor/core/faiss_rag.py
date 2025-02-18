@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import pickle
 import shutil
+import hashlib
 
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -11,6 +12,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
 from .base_rag import BaseRAG, RAGConfig, RAGDocument, RAGResponse
+from .redis_cache import RedisCache
 from ..utils.logging_config import setup_logger
 
 logger = setup_logger('faiss_rag')
@@ -57,6 +59,7 @@ class FAISSRAGSystem(BaseRAG):
         self.document_store = None
         self.text_splitter = None
         self.llm = None
+        self.cache = None
         self.stats = {
             "total_documents": 0,
             "total_chunks": 0,
@@ -77,11 +80,29 @@ class FAISSRAGSystem(BaseRAG):
             chunk_overlap=config.chunk_overlap
         )
         
-        # Cria diretório de cache se necessário
+        # Inicializa o cache apropriado
         if config.cache_enabled:
-            Path(config.cache_dir).mkdir(parents=True, exist_ok=True)
-            
+            if config.cache_type == "redis":
+                self.cache = RedisCache(
+                    host=config.redis_host,
+                    port=config.redis_port,
+                    password=config.redis_password,
+                    db=config.redis_db,
+                    prefix=config.redis_prefix,
+                    ttl=config.redis_ttl
+                )
+                if not self.cache.ping():
+                    logger.warning("Redis não disponível, usando cache em arquivo")
+                    self._setup_file_cache()
+            else:
+                self._setup_file_cache()
+                
         logger.info(f"Sistema RAG inicializado com modelo: {config.embeddings_model}")
+        
+    def _setup_file_cache(self) -> None:
+        """Configura o cache em arquivo."""
+        Path(self.config.cache_dir).mkdir(parents=True, exist_ok=True)
+        self.cache = None
         
     def add_documents(self, documents: List[Dict[str, str]]) -> None:
         """Adiciona documentos ao sistema."""
@@ -232,7 +253,9 @@ class FAISSRAGSystem(BaseRAG):
     def clear(self) -> None:
         """Limpa todos os documentos e cache."""
         self.document_store.clear()
-        if self.config.cache_enabled:
+        if self.cache:
+            self.cache.clear()
+        else:
             shutil.rmtree(self.config.cache_dir, ignore_errors=True)
         self.stats = {key: 0 for key in self.stats}
         logger.info("Sistema RAG limpo")
@@ -260,22 +283,29 @@ class FAISSRAGSystem(BaseRAG):
         
     def _get_cache_key(self, question: str) -> str:
         """Gera uma chave de cache para a pergunta."""
-        import hashlib
         return hashlib.md5(question.encode()).hexdigest()
         
     def _get_from_cache(self, cache_key: str) -> Optional[RAGResponse]:
         """Recupera resposta do cache."""
-        cache_file = Path(self.config.cache_dir) / f"{cache_key}.pkl"
-        if cache_file.exists():
-            with open(cache_file, "rb") as f:
-                return pickle.load(f)
+        if self.cache:
+            return self.cache.get(cache_key)
+        else:
+            # Cache em arquivo
+            cache_file = Path(self.config.cache_dir) / f"{cache_key}.pkl"
+            if cache_file.exists():
+                with open(cache_file, "rb") as f:
+                    return pickle.load(f)
         return None
         
     def _save_to_cache(self, cache_key: str, response: RAGResponse) -> None:
         """Salva resposta no cache."""
-        cache_file = Path(self.config.cache_dir) / f"{cache_key}.pkl"
-        with open(cache_file, "wb") as f:
-            pickle.dump(response, f)
+        if self.cache:
+            self.cache.set(cache_key, response)
+        else:
+            # Cache em arquivo
+            cache_file = Path(self.config.cache_dir) / f"{cache_key}.pkl"
+            with open(cache_file, "wb") as f:
+                pickle.dump(response, f)
             
     def _update_avg_response_time(self, new_time: float) -> None:
         """Atualiza o tempo médio de resposta."""
