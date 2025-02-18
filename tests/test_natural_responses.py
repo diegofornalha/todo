@@ -1,236 +1,226 @@
 import pytest
-from src.core.qa_chain import QAChain
-from src.models.groq_handler import GroqHandler
-from src.config.prompt_templates import QA_PROMPT, DOCUMENT_PROMPT
+from langgraph_agente_vendedor.core.faiss_rag import FAISSRAGSystem
+from langgraph_agente_vendedor.core.base_rag import RAGConfig
 import re
 
-class TestNaturalResponses:
-    """Testes para garantir respostas naturais e humanizadas."""
-    
-    @pytest.fixture
-    def qa_chain(self):
-        """Fixture que cria uma instância do QAChain."""
-        llm_handler = GroqHandler()
-        return QAChain(llm_handler=llm_handler)
-    
-    @pytest.fixture
-    def sample_documents(self):
-        """Fixture com documentos de exemplo para testes."""
-        return [
-            {
-                "content": "A Sala de Sinais Cripto Expert oferece análises com 80-95% de assertividade",
-                "metadata": {"source": "sala_sinais.txt"}
-            },
-            {
-                "content": "Estratégias de vendas incluem empatia e personalização no atendimento",
-                "metadata": {"source": "vendas.txt"}
-            }
-        ]
+@pytest.fixture
+def rag_system():
+    """Fixture que fornece uma instância do sistema RAG."""
+    config = RAGConfig(
+        embeddings_model="sentence-transformers/all-MiniLM-L6-v2",
+        chunk_size=1000,
+        chunk_overlap=200,
+        max_documents=3,
+        similarity_threshold=0.7,
+        cache_enabled=True,
+        cache_dir="cache/test_rag"
+    )
+    system = FAISSRAGSystem()
+    system.initialize(config)
+    return system
 
-    def test_avoid_robotic_patterns(self, qa_chain, sample_documents):
-        """Testa se as respostas evitam padrões robóticos."""
-        qa_chain.add_documents(sample_documents)
-        
-        queries = [
-            "Qual a melhor criptomoeda?",
-            "Como funciona a sala de sinais?",
-            "O que é análise técnica?"
-        ]
-        
-        forbidden_patterns = [
-            r"não encontr[ei|amos|ou]",
-            r"os documentos",
-            r"não poss[o|amos]",
-            r"não h[á|ave|avia]",
-            r"inform[o|amos]",
-            r"processando",
-            r"analisando",
-            r"sistema",
-            r"assistant"
-        ]
-        
-        for query in queries:
-            response = qa_chain.query(query)
-            for pattern in forbidden_patterns:
-                assert not re.search(pattern, response['resposta'].lower()), f"Padrão robótico encontrado: {pattern}"
-
-    def test_natural_conversation_elements(self, qa_chain, sample_documents):
-        """Testa se as respostas incluem elementos de conversação natural."""
-        qa_chain.add_documents(sample_documents)
-        
-        required_elements = [
-            (r"[😄😊🤔💡🚀]", "Deve incluir emojis estrategicamente"),
-            (r"(cara|então|olha|sabe|nossa)", "Deve usar expressões coloquiais"),
-            (r"\?", "Deve incluir perguntas de engajamento"),
-            (r"(me lembra|outro dia|uma vez)", "Deve incluir elementos narrativos")
-        ]
-        
-        query = "Como funciona o mercado cripto?"
-        response = qa_chain.query(query)
-        
-        for pattern, message in required_elements:
-            assert re.search(pattern, response['resposta'], re.IGNORECASE), message
-
-    def test_personal_experience_sharing(self, qa_chain, sample_documents):
-        """Testa se as respostas incluem compartilhamento de experiências pessoais."""
-        qa_chain.add_documents(sample_documents)
-        
-        experience_patterns = [
-            r"(já aconteceu|aconteceu comigo|outro dia eu)",
-            r"(conversei com|falando com|um amigo)",
-            r"(na minha experiência|pelo que vi|tenho visto)",
-            r"(me lembra quando|lembro que|quando comecei)"
-        ]
-        
-        query = "Dicas para investir em cripto?"
-        response = qa_chain.query(query)
-        
-        pattern_found = any(re.search(p, response['resposta'], re.IGNORECASE) for p in experience_patterns)
-        assert pattern_found, "Resposta deve incluir experiência pessoal"
-
-    def test_engagement_strategies(self, qa_chain, sample_documents):
-        """Testa se as respostas usam estratégias de engajamento."""
-        qa_chain.add_documents(sample_documents)
-        
-        engagement_elements = [
-            (r"\?", "Deve incluir perguntas"),
-            (r"(imagina|pensa|já parou pra pensar)", "Deve usar elementos reflexivos"),
-            (r"(interessante|legal|bacana|demais)", "Deve usar expressões de entusiasmo"),
-            (r"(como você|o que você acha|sua opinião)", "Deve pedir feedback do usuário")
-        ]
-        
-        query = "Como escolher uma criptomoeda?"
-        response = qa_chain.query(query)
-        
-        for pattern, message in engagement_elements:
-            assert re.search(pattern, response['resposta'], re.IGNORECASE), message
-
-    def test_redirection_strategies(self, qa_chain, sample_documents):
-        """Testa estratégias de redirecionamento para perguntas sem resposta direta."""
-        qa_chain.add_documents(sample_documents)
-        
-        # Perguntas que não podem ser respondidas diretamente
-        difficult_queries = [
-            "Qual será o preço do Bitcoin amanhã?",
-            "Você pode me garantir lucro?",
-            "Qual a melhor corretora?"
-        ]
-        
-        redirection_patterns = [
-            r"(é como se fosse|é parecido com)",
-            r"(me faz pensar em|me lembra)",
-            r"(a partir dessa experiência|depois que percebi)",
-        ]
-        
-        for query in difficult_queries:
-            response = qa_chain.query(query)
-            assert any(re.search(p, response['resposta'], re.IGNORECASE) for p in redirection_patterns), "Deve usar redirecionamento natural"
-                
-    def test_natural_language_variations(self, qa_chain, sample_documents):
-        """Testa variações naturais de linguagem nas respostas."""
-        qa_chain.add_documents(sample_documents)
-        
-        # Mesma pergunta feita de formas diferentes
-        query_variations = [
-            "Como funciona a sala de sinais?",
-            "Me explica a sala de sinais",
-            "Quero saber sobre a sala de sinais"
-        ]
-        
-        responses = []
-        for query in query_variations:
-            response = qa_chain.query(query)
-            responses.append(response['resposta'])
-        
-        # Verifica se as respostas são diferentes entre si
-        for i in range(len(responses)):
-            for j in range(i + 1, len(responses)):
-                similarity = len(set(responses[i].split()) & set(responses[j].split())) / len(set(responses[i].split()) | set(responses[j].split()))
-                assert similarity < 0.7, "Respostas devem ter variação natural de linguagem"
-
-    def test_response_length_and_structure(self, qa_chain, sample_documents):
-        """Testa se a resposta tem comprimento e estrutura natural."""
-        qa_chain.add_documents(sample_documents)
-        
-        response = qa_chain.query("O que você acha de Bitcoin?")
-        
-        # Verifica tamanho da resposta (nem muito curta, nem muito longa)
-        assert 100 <= len(response['resposta']) <= 1000
-        
-        # Verifica se tem exatamente 3 parágrafos
-        paragraphs = [p for p in response['resposta'].split("\n\n") if p.strip()]
-        assert len(paragraphs) == 3, "Resposta deve ter exatamente 3 parágrafos"
-        
-        # Verifica estrutura dos parágrafos
-        assert any(re.search(r"(nossa|poxa|caramba|calma|todo mundo)", paragraphs[0], re.IGNORECASE)), "Primeiro parágrafo deve começar com expressão emocional"
-        assert any(re.search(r"(sabe que|outro dia|engraçado|falando nisso)", paragraphs[1], re.IGNORECASE)), "Segundo parágrafo deve começar com redirecionamento"
-        assert "?" in paragraphs[2], "Terceiro parágrafo deve terminar com pergunta"
-
-    def test_emotional_engagement(self, qa_chain, sample_documents):
-        """Testa se a resposta demonstra engajamento emocional apropriado."""
-        qa_chain.add_documents(sample_documents)
-        
-        # Perguntas com diferentes tons emocionais
-        emotional_questions = {
-            "Perdi muito dinheiro em cripto 😢": [
-                r"Poxa, sei exatamente como é isso",
-                r"Já passei por uma situação parecida",
-                r"Foi um momento difícil"
-            ],
-            "Consegui meu primeiro lucro! 🚀": [
-                r"Caramba, que demais",
-                r"Você tá mandando muito bem",
-                r"É incrível ver seu progresso"
-            ],
-            "Estou confuso com tanta informação": [
-                r"Calma, vamos por partes",
-                r"Deixa eu te ajudar com isso",
-                r"Quando comecei"
-            ],
-            "Não sei por onde começar": [
-                r"Todo mundo começa assim",
-                r"O primeiro passo é o mais importante",
-                r"Você vai se surpreender"
-            ]
+@pytest.fixture
+def sample_documents():
+    """Fixture com documentos de exemplo para testes."""
+    return [
+        {
+            "content": "A técnica Pomodoro ajuda na gestão do tempo dividindo o trabalho em blocos de 25 minutos.",
+            "source": "produtividade.txt"
+        },
+        {
+            "content": "GTD (Getting Things Done) é um método de organização pessoal criado por David Allen.",
+            "source": "organizacao.txt"
         }
-        
-        for question, patterns in emotional_questions.items():
-            response = qa_chain.query(question)
-            for pattern in patterns:
-                assert re.search(pattern, response['resposta'], re.IGNORECASE), f"Resposta não demonstrou padrão emocional: {pattern}"
+    ]
 
-    def test_contextual_redirection(self, qa_chain, sample_documents):
-        """Testa se a resposta redireciona naturalmente quando não tem a informação."""
-        qa_chain.add_documents(sample_documents)
+def test_avoid_not_found_patterns(rag_system):
+    """Testa se as respostas evitam padrões de 'não encontrei'."""
+    forbidden_patterns = [
+        # Padrões explícitos de "não encontrei"
+        r"não encontr[ei|amos|ou]",
+        r"não h[á|ave|avia]",
+        r"não poss[o|amos]",
+        r"não disp[õe|onho|omos]",
+        r"sem inform[ação|ações]",
+        r"dados insuficientes",
+        r"não [é|foi] possível",
+        r"não tenho",
+        r"não est[á|ava]",
         
-        # Perguntas fora do contexto
-        off_topic_questions = [
-            "Qual o melhor restaurante da cidade?",
-            "Como consertar meu carro?",
-            "Onde passar as férias?"
+        # Novos padrões proibidos
+        r"(nos|nos) documentos fornecidos",
+        r"(na|nas) (base|bases) de dados",
+        r"(no|nos) (texto|textos)",
+        r"(na|nas) (fonte|fontes)",
+        r"não consta",
+        r"não cont[ém|em]",
+        r"não (existe|existem)",
+        r"não (foi|foram) encontrad[o|a|os|as]",
+        r"não (há|havia|houve)",
+        r"ausência de",
+        r"falta[m]? (de )?dados",
+        r"informações? (não )?dispon[íi]ve[l|is]",
+        r"sem (dados|registros|resultados)",
+        r"nada (foi )?encontrad[o|a]",
+        r"nenhum[a]? (informação|dado|resultado)",
+        r"limitação (de|dos) dados",
+        r"não (posso|podemos) (responder|informar)",
+        r"não (temos|tenho) (essa|esta) informação",
+        r"não (consta|constam) (no|nos|na|nas)",
+        r"não (está|estão) (presente|presentes)",
+        r"não (foi|foram) (localizado|localizados|localizada|localizadas)",
+        r"busca não retornou",
+        r"consulta não retornou",
+        r"sem (resultados|retorno)",
+        r"não (consegui|conseguimos) (encontrar|localizar|identificar)"
+    ]
+    
+    # Perguntas fora do contexto dos documentos
+    questions = [
+        "Qual o sentido da vida?",
+        "Como funciona a fusão nuclear?",
+        "Quem inventou o avião?",
+        "Por que o céu é azul?",
+        "Qual a origem do universo?",
+        "Como funciona o blockchain?",
+        "O que é inteligência artificial?",
+        "Como surgiu a internet?",
+        "Por que os dinossauros foram extintos?",
+        "Como funciona o sistema solar?"
+    ]
+    
+    for question in questions:
+        response = rag_system.query(question)
+        for pattern in forbidden_patterns:
+            assert not re.search(pattern, response.answer.lower()), \
+                f"Padrão proibido encontrado: {pattern} na resposta para: {question}"
+        
+        # Verifica se a resposta contém elementos positivos
+        positive_patterns = [
+            r"(isso me (lembra|faz pensar))",
+            r"(que (legal|bacana|interessante))",
+            r"(sabe que|então|olha)",
+            r"\?",  # Deve ter pelo menos uma pergunta
+            r"(😊|🤔|💡|🚀)"  # Deve ter pelo menos um emoji
         ]
         
-        redirection_patterns = [
-            r"(é como se fosse|é parecido com)",
-            r"(me faz pensar em|me lembra)",
-            r"(a partir dessa experiência|depois que percebi)",
-        ]
-        
-        for question in off_topic_questions:
-            response = qa_chain.query(question)
-            assert any(re.search(pattern, response['resposta'], re.IGNORECASE) for pattern in redirection_patterns), "Deve usar redirecionamento natural"
+        patterns_found = [p for p in positive_patterns if re.search(p, response.answer.lower())]
+        assert len(patterns_found) >= 3, \
+            f"Resposta deve incluir pelo menos 3 elementos positivos. Encontrados: {len(patterns_found)}"
 
-    def test_follow_up_questions(self, qa_chain, sample_documents):
-        """Testa se a resposta inclui perguntas de follow-up adequadas."""
-        qa_chain.add_documents(sample_documents)
-        
-        response = qa_chain.query("Como começar em cripto?")
-        
-        # Verifica se termina com pergunta de engajamento
-        last_paragraph = response['resposta'].split("\n\n")[-1]
-        assert "?" in last_paragraph, "Deve terminar com pergunta de engajamento"
-        assert any(re.search(pattern, last_paragraph, re.IGNORECASE) for pattern in [
-            r"o que você acha",
-            r"que tal a gente",
-            r"como você vê"
-        ]), "Deve usar uma das estruturas de pergunta definidas" 
+def test_redirection_elements(rag_system):
+    """Testa se as respostas incluem elementos de redirecionamento natural."""
+    redirection_patterns = [
+        r"(isso me lembra|me faz pensar em)",
+        r"(interessante você perguntar|que legal sua pergunta)",
+        r"(sabe que|então|olha)",
+        r"(já parou pra pensar|você já pensou)",
+        r"(que tal|podemos)",
+        r"\?"  # Deve incluir pelo menos uma pergunta
+    ]
+    
+    questions = [
+        "Como funciona a teoria das cordas?",
+        "O que é energia escura?",
+        "Como surgiu a matemática?",
+        "Por que existem diferentes idiomas?",
+        "Como funciona a consciência?"
+    ]
+    
+    for question in questions:
+        response = rag_system.query(question)
+        patterns_found = [p for p in redirection_patterns if re.search(p, response.answer.lower())]
+        assert len(patterns_found) >= 3, \
+            f"Resposta deve incluir pelo menos 3 padrões de redirecionamento. Encontrados: {len(patterns_found)}"
+
+def test_engagement_questions(rag_system):
+    """Testa se as respostas terminam com perguntas de engajamento."""
+    questions = [
+        "Como meditar?",
+        "O que é mindfulness?",
+        "Como ser mais produtivo?",
+        "Como melhorar o foco?",
+        "Como desenvolver criatividade?"
+    ]
+    
+    for question in questions:
+        response = rag_system.query(question)
+        # Verifica se o último parágrafo contém uma pergunta
+        paragraphs = [p.strip() for p in response.answer.split("\n\n") if p.strip()]
+        assert "?" in paragraphs[-1], \
+            f"Último parágrafo deve conter uma pergunta de engajamento: {paragraphs[-1]}"
+
+def test_emotional_connection(rag_system):
+    """Testa se as respostas estabelecem conexão emocional."""
+    emotional_patterns = [
+        r"(que (legal|bacana|interessante))",
+        r"(nossa|poxa|cara)",
+        r"(😊|🤔|💡|🚀)",  # Emojis
+        r"(entendo|compreendo)",
+        r"(já passei por|já vivi)",
+        r"(me lembra|me faz pensar)"
+    ]
+    
+    questions = [
+        "Como lidar com ansiedade?",
+        "Como superar desafios?",
+        "Como manter a motivação?",
+        "Como encontrar propósito?",
+        "Como ser mais feliz?"
+    ]
+    
+    for question in questions:
+        response = rag_system.query(question)
+        patterns_found = [p for p in emotional_patterns if re.search(p, response.answer.lower())]
+        assert len(patterns_found) >= 3, \
+            f"Resposta deve incluir pelo menos 3 padrões emocionais. Encontrados: {len(patterns_found)}"
+
+def test_personal_experience_sharing(rag_system):
+    """Testa se as respostas incluem compartilhamento de experiências pessoais."""
+    experience_patterns = [
+        r"(quando eu|já passei por)",
+        r"(na minha experiência|tenho visto)",
+        r"(outro dia|uma vez)",
+        r"(aprendi que|descobri que)",
+        r"(me lembra quando|lembro que)"
+    ]
+    
+    questions = [
+        "Como começar a programar?",
+        "Como aprender inglês?",
+        "Como fazer networking?",
+        "Como mudar de carreira?",
+        "Como estudar melhor?"
+    ]
+    
+    for question in questions:
+        response = rag_system.query(question)
+        patterns_found = [p for p in experience_patterns if re.search(p, response.answer.lower())]
+        assert len(patterns_found) >= 2, \
+            f"Resposta deve incluir pelo menos 2 padrões de experiência pessoal. Encontrados: {len(patterns_found)}"
+
+def test_natural_redirection(rag_system):
+    """Testa se as respostas usam redirecionamento natural quando não há informação específica."""
+    redirection_templates = [
+        r"isso me faz pensar em .{10,}",  # Deve completar a analogia
+        r"sabe que isso é parecido com .{10,}",  # Deve completar a comparação
+        r"me lembra muito quando .{10,}",  # Deve compartilhar experiência
+        r"outro dia estava .{10,}",  # Deve contar uma história
+        r"na minha experiência .{10,}",  # Deve compartilhar aprendizado
+        r"já parou pra pensar como .{10,}",  # Deve provocar reflexão
+        r"que tal a gente .{10,}\?"  # Deve propor uma ação
+    ]
+    
+    questions = [
+        "Como funciona a teoria quântica?",
+        "O que existe além do universo?",
+        "Como surgiu a linguagem?",
+        "Por que sonhamos?",
+        "O que é consciência?"
+    ]
+    
+    for question in questions:
+        response = rag_system.query(question)
+        templates_found = [t for t in redirection_templates if re.search(t, response.answer.lower())]
+        assert len(templates_found) >= 2, \
+            f"Resposta deve usar pelo menos 2 templates de redirecionamento. Encontrados: {len(templates_found)}" 
