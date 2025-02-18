@@ -106,40 +106,48 @@ st.header("Faça sua Pergunta")
 # Checkbox para mostrar/ocultar pensamento
 show_thought = st.checkbox("Mostrar processo de pensamento", value=False)
 
-# Input da pergunta
-question = st.text_input("Digite sua pergunta:")
+# Container principal para o chat
+chat_container = st.container()
 
-if question:
-    if not qa_system:
-        st.error("Sistema não inicializado corretamente.")
-    else:
-        with st.spinner("Processando sua pergunta..."):
-            try:
-                # Processa a pergunta
-                result = qa_system.query(question)
-                
-                # Extrai pensamento e resposta
-                thought, answer = extract_thought_and_answer(result['resposta'])
-                
-                # Exibe a resposta
-                st.subheader("Resposta:")
-                
-                # Mostra o pensamento se a opção estiver marcada e existir pensamento
-                if show_thought and thought:
-                    with st.expander("Processo de Pensamento", expanded=True):
-                        st.markdown(thought)
-                
-                # Mostra a resposta final
-                st.markdown(answer)
-                
-                # Exibe o status
-                if result['status'] == 'sucesso':
-                    st.success("Pergunta processada com sucesso!")
-                else:
-                    st.error("Erro ao processar a pergunta")
-                
-            except Exception as e:
-                st.error(f"Erro ao processar a pergunta: {str(e)}")
+# Área de input sempre no final
+with st.container():
+    # Linha horizontal para separar
+    st.markdown("---")
+    
+    # Input da pergunta
+    if question := st.chat_input("Digite sua pergunta...", key="chat_input"):
+        if not qa_system:
+            st.error("Sistema não inicializado corretamente.")
+        else:
+            with st.spinner("Processando sua pergunta..."):
+                try:
+                    # Processa a pergunta
+                    result = qa_system.query(question)
+                    
+                    # Extrai pensamento e resposta
+                    thought, answer = extract_thought_and_answer(result['resposta'])
+                    
+                    # Exibe a resposta no container do chat
+                    with chat_container:
+                        st.subheader("Resposta:")
+                        
+                        # Mostra o pensamento se a opção estiver marcada e existir pensamento
+                        if show_thought and thought:
+                            with st.expander("Processo de Pensamento", expanded=True):
+                                st.markdown(thought)
+                        
+                        # Mostra a resposta final
+                        with st.chat_message("assistant"):
+                            st.markdown(answer)
+                        
+                        # Exibe o status
+                        if result['status'] == 'sucesso':
+                            st.success("Pergunta processada com sucesso!")
+                        else:
+                            st.error("Erro ao processar a pergunta")
+                    
+                except Exception as e:
+                    st.error(f"Erro ao processar a pergunta: {str(e)}")
 
 # Footer
 st.markdown("---")
