@@ -187,85 +187,85 @@ class QAChain:
         """
         experiences = {
             'frustração': [
-                "Poxa, sei exatamente como é isso! 😢 Já parou pra pensar que todo mundo passa por momentos assim? Outro dia eu também perdi uma grana e foi bem difícil mesmo! 🤔",
-                "Poxa, sei exatamente como é isso! 😢 Imagina só, quando passei por isso também me senti assim. Foi um momento muito desafiador! 💡",
-                "Poxa, sei exatamente como é isso! 😢 Pensa comigo: às vezes esses momentos difíceis nos ensinam muito, sabe? 😊"
+                "Poxa, sei exatamente como é isso! 😢 Cara, outro dia eu também perdi uma grana e foi bem difícil mesmo. Já parou pra pensar que todo mundo passa por isso? 🤔",
+                "Nossa, sei exatamente como é isso! 😢 Então, uma vez passei por isso também e foi muito desafiador. Imagina só que legal poder trocar essa experiência! 💡",
+                "Poxa, sei exatamente como é isso! 😢 Olha, já aconteceu comigo também e foi bem complicado. Pensa só que interessante você trazer esse tema! 😊"
             ],
             'conquista': [
-                "Caramba, que demais! 🚀 Já parou pra pensar no quanto você evoluiu até aqui? Outro dia eu também consegui uma conquista assim! 😊",
-                "Caramba, que demais! 🚀 Imagina só quanto esforço você colocou nisso! Me lembra quando consegui minha primeira vitória! 💡",
-                "Caramba, que demais! 🚀 Pensa comigo: cada pequeno passo te trouxe até aqui, não é incrível? 😄"
+                "Caramba, que demais! 🚀 Cara, outro dia eu também consegui uma conquista assim! Já parou pra pensar no quanto você evoluiu? 😊",
+                "Nossa, que demais! 🚀 Então, uma vez consegui algo parecido e foi incrível! Imagina só que bacana ver você crescendo! 💡",
+                "Caramba, que demais! 🚀 Olha, já aconteceu comigo também e foi super especial! Pensa só que interessante sua jornada! 😄"
             ],
             'dúvida': [
-                "Calma, vamos por partes! 🤔 Já parou pra pensar que todo mundo começa assim? Quando eu comecei também tinha essas dúvidas! 💡",
-                "Calma, vamos por partes! 🤔 Imagina só: é como montar um quebra-cabeça, cada peça tem seu momento! 😊",
-                "Calma, vamos por partes! 🤔 Pensa comigo: cada dúvida é uma oportunidade de aprender algo novo! 🚀"
+                "Calma, vamos por partes! 🤔 Cara, outro dia eu também tava assim! Já parou pra pensar como todo mundo começa do zero? 💡",
+                "Então, vamos com calma! 🤔 Olha, uma vez passei por isso também! Imagina só que legal sua curiosidade! 😊",
+                "Nossa, vamos devagar! 🤔 Sabe, já aconteceu comigo também! Pensa só que interessante sua dúvida! 🚀"
             ],
             'insegurança': [
-                "Todo mundo começa assim! 💡 Já parou pra pensar que até os mais experientes já estiveram no seu lugar? Quando comecei também me sentia assim! 😊",
-                "Todo mundo começa assim! 💡 Imagina só: é como aprender a andar de bicicleta, no início parece impossível! 🤔",
-                "Todo mundo começa assim! 💡 Pensa comigo: cada passo, mesmo que pequeno, te leva mais longe! 🚀"
+                "Todo mundo começa assim! 💡 Cara, outro dia eu também me sentia assim! Já parou pra pensar que isso é super normal? 😊",
+                "Nossa, todo mundo passa por isso! 💡 Então, uma vez passei por isso também! Imagina só que bacana essa troca! 🤔",
+                "Olha, todo mundo tem esse momento! 💡 Sabe, já aconteceu comigo também! Pensa só que interessante sua jornada! 🚀"
             ],
             'neutro': [
-                "Olha, que interessante sua pergunta! 🤔 Já parou pra pensar sobre isso de outro ângulo? Me faz lembrar de quando comecei a explorar esse tema! 💡",
-                "Olha, que bacana seu questionamento! 🤔 Imagina só: é como descobrir um novo caminho em uma cidade que você já conhece! 😊",
-                "Olha, que legal essa dúvida! 🤔 Pensa comigo: cada pergunta nos abre novas possibilidades de aprendizado! 🚀"
+                "Olha, que interessante sua pergunta! 🤔 Cara, outro dia tava pensando nisso! Já parou pra pensar como esse tema é legal? 💡",
+                "Nossa, que bacana seu questionamento! 🤔 Então, uma vez refleti bastante sobre isso! Imagina só que interessante sua visão! 😊",
+                "Poxa, que legal essa dúvida! 🤔 Sabe, já aconteceu comigo também! Pensa só que demais poder conversar sobre isso! 🚀"
             ]
         }
         
         reflections = {
             'frustração': [
-                "É como se fosse aprender a andar de bicicleta, sabe? 🤔 A partir dessa experiência, vi que no começo a gente cai, mas depois tudo faz sentido! 💡",
-                "Me faz pensar em quando estamos montando um quebra-cabeça - 😊 depois que percebi isso, vi que cada peça tem seu momento! 🚀",
-                "É parecido com aprender uma receita nova - 🤔 a partir dessa experiência, entendi que cada erro nos ensina algo! 💡"
+                "É como se fosse aprender a andar de bicicleta, sabe? 🤔 Cara, me lembra quando caí várias vezes! Já parou pra pensar como depois tudo faz sentido? 💡",
+                "Então, me faz pensar em quando montei meu primeiro quebra-cabeça - 😊 Nossa, outro dia lembrei disso! Imagina só que bacana essa comparação! 🚀",
+                "Olha, é parecido com uma vez que tentei uma receita nova - 🤔 Sabe, já aconteceu comigo! Pensa só que interessante essa reflexão! 💡"
             ],
             'conquista': [
-                "É como se fosse ganhar uma medalha depois de muito treino, sabe? 🚀 A partir dessa experiência, vi que cada passo importa! 😊",
-                "Me faz pensar em quando plantamos uma semente - 💡 depois que percebi isso, entendi como nosso cuidado faz diferença! 🤔",
-                "É parecido com chegar ao topo da montanha - 😄 a partir dessa experiência, vi que a vista vale todo esforço! 🚀"
+                "É como se fosse ganhar uma medalha, sabe? 🚀 Cara, me lembra quando consegui minha primeira vitória! Já parou pra pensar como esse momento é especial? 😊",
+                "Então, me faz pensar em quando plantei minha primeira semente - 💡 Nossa, outro dia refleti sobre isso! Imagina só que bacana essa conquista! 🤔",
+                "Olha, é parecido com uma vez que cheguei ao topo da montanha - 😄 Sabe, já aconteceu comigo! Pensa só que interessante essa jornada! 🚀"
             ],
             'dúvida': [
-                "É como se fosse explorar um lugar novo, sabe? 🤔 A partir dessa experiência, vi que cada descoberta é uma surpresa! 💡",
-                "Me faz pensar em quando aprendemos um jogo novo - 😊 depois que percebi isso, cada regra fez mais sentido! 🚀",
-                "É parecido com conhecer uma cidade nova - 🤔 a partir dessa experiência, vi que cada cantinho tem algo especial! 💡"
+                "É como se fosse explorar um lugar novo, sabe? 🤔 Cara, me lembra quando me perdi pela primeira vez! Já parou pra pensar como cada descoberta é especial? 💡",
+                "Então, me faz pensar em quando aprendi um jogo novo - 😊 Nossa, outro dia passei por isso! Imagina só que bacana esse processo! 🚀",
+                "Olha, é parecido com uma vez que conheci uma cidade nova - 🤔 Sabe, já aconteceu comigo! Pensa só que interessante essa experiência! 💡"
             ],
             'insegurança': [
-                "É como se fosse aprender a nadar, sabe? 🤔 A partir dessa experiência, vi que o medo inicial é normal! 💡",
-                "Me faz pensar na primeira vez que fiz algo novo - 😊 depois que percebi isso, entendi que a ansiedade passa! 🚀",
-                "É parecido com andar de patins - 🤔 a partir dessa experiência, vi que logo estamos deslizando! 💡"
+                "É como se fosse aprender a nadar, sabe? 🤔 Cara, me lembra quando tive medo da água! Já parou pra pensar como é bom superar isso? 💡",
+                "Então, me faz pensar em quando tentei algo novo - 😊 Nossa, outro dia refleti sobre isso! Imagina só que bacana essa coragem! 🚀",
+                "Olha, é parecido com uma vez que andei de patins - 🤔 Sabe, já aconteceu comigo! Pensa só que interessante esse processo! 💡"
             ],
             'neutro': [
-                "É como se fosse ler um livro novo, sabe? 🤔 A partir dessa experiência, vi que cada página traz uma surpresa! 💡",
-                "Me faz pensar em quando descobrimos algo novo - 😊 depois que percebi isso, vi que sempre há mais pra aprender! 🚀",
-                "É parecido com um papo com amigos - 🤔 a partir dessa experiência, cada conversa traz algo especial! 💡"
+                "É como se fosse ler um livro novo, sabe? 🤔 Cara, me lembra quando descobri minha história favorita! Já parou pra pensar como esse momento é especial? 💡",
+                "Então, me faz pensar em quando aprendi algo novo - 😊 Nossa, outro dia pensei nisso! Imagina só que bacana essa reflexão! 🚀",
+                "Olha, é parecido com uma vez que tive uma ótima conversa - 🤔 Sabe, já aconteceu comigo! Pensa só que interessante esse tema! 💡"
             ]
         }
         
         follow_ups = {
             'frustração': [
-                "Já parou pra pensar em como podemos superar isso juntos? 🤔 Sua experiência é muito valiosa! 💡",
-                "Imagina a gente conversando mais sobre o que você tá sentindo? 😊 Às vezes ajuda desabafar! 🚀",
-                "Pensa comigo: como você tá vendo essa situação agora? 🤔 Me conta mais da sua jornada! 💡"
+                "Cara, o que você acha de compartilharmos mais sobre como você tá lidando com isso? Já parou pra pensar como é bom ter apoio nesses momentos? 💡",
+                "Então, que tal a gente conversar mais sobre o que você tá sentindo? Nossa, outro dia isso me ajudou muito! Imagina só que bacana essa troca! 😊",
+                "Olha, como você vê essa situação agora? Sabe, uma vez passei por algo parecido! Pensa só que interessante sua perspectiva! 🤔"
             ],
             'conquista': [
-                "Já parou pra pensar no que mais te ajudou nessa conquista? 🚀 Tô super curioso! 😊",
-                "Imagina seus próximos objetivos! 💡 Que tal me contar o que você planeja? 🤔",
-                "Pensa comigo: como você visualiza os próximos passos? 😄 Tô super animado! 🚀"
+                "Cara, o que você acha que te ajudou mais nessa conquista? Já parou pra pensar no seu progresso? Me lembra quando consegui algo parecido! 🚀",
+                "Então, que tal a gente explorar seus próximos objetivos? Nossa, outro dia fiz isso e foi incrível! Imagina só que bacana planejar! 😊",
+                "Olha, como você vê os próximos passos? Sabe, uma vez tracei metas assim! Pensa só que interessante sua visão! 💡"
             ],
             'dúvida': [
-                "Já parou pra pensar em explorarmos isso juntos? 🤔 Me conta mais o que te intriga! 💡",
-                "Imagina começarmos pelo básico! 😊 Que tal? Tô aqui pra ajudar! 🚀",
-                "Pensa comigo: como você tá vendo esse aprendizado? 🤔 Vamo nessa! 💡"
+                "Cara, o que você acha da gente explorar isso juntos? Já parou pra pensar como é bom ter alguém pra ajudar? Me lembra quando tive essas dúvidas! 🤔",
+                "Então, que tal a gente começar pelo básico? Nossa, outro dia isso me ajudou muito! Imagina só que bacana esse processo! 💡",
+                "Olha, como você vê esse aprendizado? Sabe, uma vez comecei assim também! Pensa só que interessante sua jornada! 😊"
             ],
             'insegurança': [
-                "Já parou pra pensar em conversarmos sobre esses receios? 🤔 Às vezes só de falar já ajuda! 💡",
-                "Imagina começarmos com pequenos passos! 😊 Que tal? Tô aqui pra te apoiar! 🚀",
-                "Pensa comigo: como você quer começar? 🤔 Vamo descobrir juntos! 💡"
+                "Cara, o que você acha da gente conversar sobre esses receios? Já parou pra pensar como é normal se sentir assim? Me lembra quando precisei de apoio! 💡",
+                "Então, que tal a gente pensar em pequenos passos? Nossa, outro dia isso me ajudou muito! Imagina só que bacana esse processo! 🤔",
+                "Olha, como você vê o começo dessa jornada? Sabe, uma vez comecei assim também! Pensa só que interessante seu caminho! 😊"
             ],
             'neutro': [
-                "Já parou pra pensar em explorarmos mais esse tema? 🤔 Tô super interessado na sua visão! 💡",
-                "Imagina trocarmos mais ideias sobre isso! 😊 Vai ser uma conversa rica! 🚀",
-                "Pensa comigo: como você tá vendo esse assunto? 🤔 Quero muito saber! 💡"
+                "Cara, o que você acha da gente explorar mais esse tema? Já parou pra pensar como é legal trocar ideias? Me lembra quando comecei a estudar isso! 🤔",
+                "Então, que tal a gente trocar mais ideias sobre isso? Nossa, outro dia tive ótimas reflexões! Imagina só que bacana essa conversa! 💡",
+                "Olha, como você vê esse assunto? Sabe, uma vez me aprofundei nisso! Pensa só que interessante sua perspectiva! 😊"
             ]
         }
         
