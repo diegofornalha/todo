@@ -7,9 +7,35 @@ from tempfile import NamedTemporaryFile
 import logging
 from src.utils.logging_config import setup_logger
 import re
+import glob
 
 # Configuração do logger
 logger = setup_logger('streamlit_app', 'logs/app.log')
+
+# Função para carregar documentos da pasta content
+def load_content_documents():
+    content_path = "content"
+    if not os.path.exists(content_path):
+        logger.warning(f"Pasta {content_path} não encontrada")
+        return []
+    
+    pdf_files = glob.glob(os.path.join(content_path, "*.pdf"))
+    if not pdf_files:
+        logger.info(f"Nenhum arquivo PDF encontrado em {content_path}")
+        return []
+    
+    processed_docs = []
+    for pdf_path in pdf_files:
+        try:
+            processor = DocumentProcessor(pdf_path)
+            docs = processor.process_pdf()
+            if docs:
+                processed_docs.extend(docs)
+                logger.info(f"Documento {pdf_path} processado com sucesso")
+        except Exception as e:
+            logger.error(f"Erro ao processar {pdf_path}: {str(e)}")
+    
+    return processed_docs
 
 # Configuração da página Streamlit
 st.set_page_config(
@@ -18,15 +44,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# Título e descrição
-st.title("Sistema de Perguntas e Respostas 🤖")
-st.markdown("""
-Este sistema permite que você:
-1. Faça upload de documentos (PDFs)
-2. Processe e indexe o conteúdo
-3. Faça perguntas sobre os documentos
-""")
-
 # Inicialização do Groq e QA Chain
 @st.cache_resource
 def initialize_qa_system():
@@ -34,6 +51,13 @@ def initialize_qa_system():
         handler = GroqHandler()
         handler.initialize()
         qa_system = QAChain(handler)
+        
+        # Carrega e processa documentos da pasta content
+        docs = load_content_documents()
+        if docs:
+            qa_system.add_documents(docs)
+            st.sidebar.success(f"{len(docs)} documentos da pasta content carregados com sucesso!")
+        
         return qa_system
     except Exception as e:
         st.error(f"Erro ao inicializar o sistema: {str(e)}")
@@ -148,7 +172,3 @@ with st.container():
                     
                 except Exception as e:
                     st.error(f"Erro ao processar a pergunta: {str(e)}")
-
-# Footer
-st.markdown("---")
-st.markdown("Desenvolvido com ❤️ usando Streamlit e LangChain") 
