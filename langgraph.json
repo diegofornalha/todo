@@ -1,16 +1,33 @@
 {
-    "name": "todo-app",
-    "description": "Aplicativo TODO usando LangGraph",
+    "name": "todo-assistant",
+    "version": "1.0.0",
+    "description": "Assistente inteligente de produtividade e gestão de tarefas usando LangGraph",
+    "author": "Cursor AI Assistant",
     "dependencies": ["."],
     "graphs": {
         "todo": "langgraph_project.todo_graph:create_todo_graph"
     },
     "env": ".env",
     "python_version": "3.11",
+    "store": {
+        "index": {
+            "embed": "openai:text-embedding-3-small",
+            "dims": 1536,
+            "fields": ["messages", "task_list"]
+        }
+    },
+    "auth": {
+        "disable_studio_auth": true
+    },
     "example_input": {
-        "messages": [{"role": "user", "content": "Listar tarefas"}],
+        "messages": [
+            {
+                "role": "user",
+                "content": "Preciso organizar melhor meu tempo"
+            }
+        ],
         "next_step": "",
-        "task_list": ["Estudar LangGraph", "Implementar TODO app", "Testar funcionalidades"],
+        "task_list": [],
         "current_task": null
     }
 } 

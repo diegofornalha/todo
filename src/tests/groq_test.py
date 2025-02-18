@@ -6,6 +6,9 @@ import json
 from typing import Optional, Dict, Any
 from ..utils.logging_config import setup_logger
 from ..config.prompt_templates import QA_PROMPT, DOCUMENT_PROMPT
+from .base_test import BaseTest
+from ..models.groq_handler import GroqHandler, GroqAPIError, GroqConfigError
+import textwrap
 
 class GroqAPIError(Exception):
     """Exceção personalizada para erros relacionados à API do Groq."""
@@ -173,56 +176,130 @@ class GroqApp:
             self.logger.error(f"Erro inesperado: {str(e)}")
             raise GroqAPIError(f"Erro inesperado: {str(e)}")
 
-def main():
-    """
-    Função principal que executa o teste da aplicação Groq.
-    """
-    logger = setup_logger('main')
-    app = GroqApp()
+class GroqTest(BaseTest):
+    """Testes para o handler do Groq."""
     
-    try:
-        # Inicializa a aplicação
-        logger.info("Iniciando aplicação Groq...")
-        app.initialize()
+    def __init__(self):
+        super().__init__('groq_handler')
+        self.handler = None
         
-        # Teste 1: Pergunta geral com contexto
-        logger.info("\n=== Teste 1: Pergunta Geral ===")
-        question1 = "Quais são as principais características do Python?"
-        context = """Python é uma linguagem de programação de alto nível criada por Guido van Rossum. 
-        É conhecida por sua sintaxe clara e legível, sendo muito usada em desenvolvimento web, 
-        ciência de dados e inteligência artificial. Python tem uma grande comunidade e muitas bibliotecas."""
+    def setup(self) -> None:
+        """
+        Configura o ambiente para os testes.
+        Inicializa o handler do Groq.
+        """
+        self.handler = GroqHandler()
+        self.handler.initialize()
         
-        result1 = app.process_question(question1, context)
-        logger.info(f"Pergunta: {result1['pergunta']}")
-        logger.info(f"Contexto: {result1['contexto']}")
-        logger.info(f"Resposta: {result1['resposta']}")
+    def test_general_question(self) -> bool:
+        """
+        Testa uma pergunta geral com contexto.
         
-        # Teste 2: Análise de documento
-        logger.info("\n=== Teste 2: Análise de Documento ===")
-        question2 = "Qual é o principal objetivo do documento?"
-        page_content = """Este documento descreve a implementação de um sistema de processamento de linguagem natural
-        usando Python e a biblioteca transformers. O sistema é capaz de realizar análise de sentimentos,
-        classificação de texto e responder perguntas sobre documentos."""
-        source = "documentacao_tecnica.pdf"
+        Returns:
+            bool: True se o teste passou, False caso contrário
+        """
+        test_name = "general_question"
+        self.log_test_start(test_name)
         
-        result2 = app.process_document(question2, page_content, source)
-        logger.info(f"Pergunta: {result2['pergunta']}")
-        logger.info(f"Fonte: {result2['fonte']}")
-        logger.info(f"Resposta: {result2['resposta']}")
+        try:
+            # Prepara a pergunta e contexto
+            question = "Quais são as principais características do Python?"
+            context = textwrap.dedent("""
+                Python é uma linguagem de programação de alto nível criada por Guido van Rossum.
+                É conhecida por sua sintaxe clara e legível, sendo muito usada em desenvolvimento web,
+                ciência de dados e inteligência artificial. Python tem uma grande comunidade e muitas bibliotecas.
+            """).strip()
+            
+            # Processa a pergunta
+            result = self.handler.process_question(question, context)
+            
+            # Verifica o resultado
+            if not result or 'resposta' not in result:
+                raise ValueError("Resposta não contém os campos esperados")
+                
+            self.logger.info(f"Pergunta: {result['pergunta']}")
+            self.logger.info(f"Contexto: {result['contexto']}")
+            self.logger.info(f"Resposta: {result['resposta']}")
+            
+            self.log_test_result(test_name, True)
+            return True
+            
+        except Exception as e:
+            self.log_test_result(test_name, False, e)
+            return False
+            
+    def test_document_analysis(self) -> bool:
+        """
+        Testa a análise de um documento específico.
         
-    except GroqConfigError as e:
-        logger.error(f"Erro de configuração: {str(e)}")
-        return 1
-    except GroqAPIError as e:
-        logger.error(f"Erro na API: {str(e)}")
-        return 1
-    except Exception as e:
-        logger.error(f"Erro inesperado: {str(e)}")
-        logger.debug("Detalhes do erro:", exc_info=True)
-        return 1
+        Returns:
+            bool: True se o teste passou, False caso contrário
+        """
+        test_name = "document_analysis"
+        self.log_test_start(test_name)
         
-    return 0
+        try:
+            # Prepara os dados do documento
+            question = "Qual é o principal objetivo do documento?"
+            page_content = textwrap.dedent("""
+                Este documento descreve a implementação de um sistema de processamento de linguagem natural
+                usando Python e a biblioteca transformers. O sistema é capaz de realizar análise de sentimentos,
+                classificação de texto e responder perguntas sobre documentos.
+            """).strip()
+            source = "documentacao_tecnica.pdf"
+            
+            # Processa o documento
+            result = self.handler.process_document(question, page_content, source)
+            
+            # Verifica o resultado
+            if not result or 'resposta' not in result:
+                raise ValueError("Resposta não contém os campos esperados")
+                
+            self.logger.info(f"Pergunta: {result['pergunta']}")
+            self.logger.info(f"Fonte: {result['fonte']}")
+            self.logger.info(f"Resposta: {result['resposta']}")
+            
+            self.log_test_result(test_name, True)
+            return True
+            
+        except Exception as e:
+            self.log_test_result(test_name, False, e)
+            return False
+            
+    def run(self) -> bool:
+        """
+        Executa todos os testes do Groq.
+        
+        Returns:
+            bool: True se todos os testes passaram, False caso contrário
+        """
+        try:
+            self.setup()
+            
+            # Executa os testes
+            tests_passed = all([
+                self.test_general_question(),
+                self.test_document_analysis()
+            ])
+            
+            return tests_passed
+            
+        except GroqConfigError as e:
+            self.logger.error(f"Erro de configuração: {str(e)}")
+            return False
+        except GroqAPIError as e:
+            self.logger.error(f"Erro na API: {str(e)}")
+            return False
+        except Exception as e:
+            self.logger.error(f"Erro inesperado: {str(e)}")
+            self.logger.debug("Detalhes do erro:", exc_info=True)
+            return False
+
+def main():
+    """Função principal para executar os testes."""
+    test = GroqTest()
+    success = test.run()
+    return 0 if success else 1
 
 if __name__ == "__main__":
-    exit_code = main()
-    exit(exit_code) 
+    exit(main()) 

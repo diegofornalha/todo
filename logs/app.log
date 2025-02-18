@@ -1,10 +1,233 @@
-2025-02-17 15:40:23 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
-2025-02-17 15:40:23 - langsmith_config - INFO - LangSmith configurado com sucesso
-2025-02-17 15:40:46 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
-2025-02-17 15:40:46 - langsmith_config - INFO - LangSmith configurado com sucesso
-2025-02-17 15:50:47 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
-2025-02-17 15:50:47 - langsmith_config - INFO - LangSmith configurado com sucesso
-2025-02-17 15:51:25 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
-2025-02-17 15:51:25 - langsmith_config - INFO - LangSmith configurado com sucesso
-2025-02-17 15:56:09 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
-2025-02-17 15:56:09 - langsmith_config - INFO - LangSmith configurado com sucesso
+2025-02-17 21:05:16 - groq_handler - INFO - Processando pergunta: o que acha do meu codigo?
+2025-02-17 21:05:16 - groq_handler - INFO - Processando pergunta: o que acha do meu codigo?
+2025-02-17 21:05:17 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:05:17 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:05:29 - groq_handler - INFO - Processando pergunta: o que acha do meu codigo?
+2025-02-17 21:05:29 - groq_handler - INFO - Processando pergunta: o que acha do meu codigo?
+2025-02-17 21:05:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:05:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:05:42 - groq_handler - INFO - Processando pergunta: sabe o que é um sistema tag?
+2025-02-17 21:05:42 - groq_handler - INFO - Processando pergunta: sabe o que é um sistema tag?
+2025-02-17 21:05:43 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:05:43 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:05:52 - groq_handler - INFO - Processando pergunta: sabe o que é um sistema rag?
+2025-02-17 21:05:52 - groq_handler - INFO - Processando pergunta: sabe o que é um sistema rag?
+2025-02-17 21:05:54 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:05:54 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:06:20 - groq_handler - INFO - Processando pergunta: o que melhoraria aqui import streamlit as st from src.core.document_processor import DocumentProcessor from src.core.qa_chain import QAChain from src.models.groq_handler import GroqHandler import os from tempfile import NamedTemporaryFile import logging from src.utils.logging_config import setup_logger import re  # Configuração do logger logger = setup_logger('streamlit_app', 'logs/app.log')  # Configuração da página Streamlit st.set_page_config(     page_title="Sistema de Perguntas e Respostas",     page_icon="🤖",     layout="wide" )  # Título e descrição st.title("Sistema de Perguntas e Respostas 🤖") st.markdown(""" Este sistema permite que você: 1. Faça upload de documentos (PDFs) 2. Processe e indexe o conteúdo 3. Faça perguntas sobre os documentos """)  # Inicialização do Groq e QA Chain @st.cache_resource def initialize_qa_system():     try:         handler = GroqHandler()         handler.initialize()         qa_system = QAChain(handler)         return qa_system     except Exception as e:         st.error(f"Erro ao inicializar o sistema: {str(e)}")         return None  # Função para processar documento def process_document(uploaded_file):     try:         # Cria um arquivo temporário para o PDF         with NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:             tmp_file.write(uploaded_file.getvalue())             tmp_path = tmp_file.name                  # Processa o documento         processor = DocumentProcessor(tmp_path)         docs = processor.process_pdf()                  # Remove o arquivo temporário         os.unlink(tmp_path)                  return docs     except Exception as e:         st.error(f"Erro ao processar o documento: {str(e)}")         return None  # Função para extrair pensamento e resposta def extract_thought_and_answer(text):     # Procura por conteúdo entre tags <think> e </think>     thought_match = re.search(r'<think>(.*?)</think>', text, re.DOTALL)          if thought_match:         thought = thought_match.group(1).strip()         # Remove a parte do pensamento do texto original para obter apenas a resposta         answer = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()         return thought, answer     else:         # Se não encontrar tags de pensamento, retorna None para pensamento e o texto original como resposta         return None, text.strip()  # Inicializa o sistema de QA qa_system = initialize_qa_system()  # Sidebar para upload de documentos with st.sidebar:     st.header("Upload de Documentos")     uploaded_files = st.file_uploader(         "Escolha os arquivos PDF",         type=['pdf'],         accept_multiple_files=True     )          if uploaded_files:         st.write(f"Arquivos carregados: {len(uploaded_files)}")                  if st.button("Processar Documentos"):             with st.spinner("Processando documentos..."):                 for file in uploaded_files:                     st.write(f"Processando: {file.name}")                     docs = process_document(file)                     if docs:                         # Adiciona os documentos ao QA system                         qa_system.add_documents(docs)                         st.success(f"{file.name} processado com sucesso!")                     else:                         st.error(f"Erro ao processar {file.name}")  # Área principal para perguntas st.header("Faça sua Pergunta")  # Checkbox para mostrar/ocultar pensamento show_thought = st.checkbox("Mostrar processo de pensamento", value=False)  # Input da pergunta question = st.text_input("Digite sua pergunta:")  if question:     if not qa_system:         st.error("Sistema não inicializado corretamente.")     else:         with st.spinner("Processando sua pergunta..."):             try:                 # Processa a pergunta                 result = qa_system.query(question)                                  # Extrai pensamento e resposta                 thought, answer = extract_thought_and_answer(result['resposta'])                                  # Exibe a resposta                 st.subheader("Resposta:")                                  # Mostra o pensamento se a opção estiver marcada e existir pensamento                 if show_thought and thought:                     with st.expander("Processo de Pensamento", expanded=True):                         st.markdown(thought)                                  # Mostra a resposta final                 st.markdown(answer)                                  # Exibe o status                 if result['status'] == 'sucesso':                     st.success("Pergunta processada com sucesso!")                 else:                     st.error("Erro ao processar a pergunta")                              except Exception as e:                 st.error(f"Erro ao processar a pergunta: {str(e)}")  # Footer st.markdown("---") st.markdown("Desenvolvido com ❤️ usando Streamlit e LangChain") 
+2025-02-17 21:06:20 - groq_handler - INFO - Processando pergunta: o que melhoraria aqui import streamlit as st from src.core.document_processor import DocumentProcessor from src.core.qa_chain import QAChain from src.models.groq_handler import GroqHandler import os from tempfile import NamedTemporaryFile import logging from src.utils.logging_config import setup_logger import re  # Configuração do logger logger = setup_logger('streamlit_app', 'logs/app.log')  # Configuração da página Streamlit st.set_page_config(     page_title="Sistema de Perguntas e Respostas",     page_icon="🤖",     layout="wide" )  # Título e descrição st.title("Sistema de Perguntas e Respostas 🤖") st.markdown(""" Este sistema permite que você: 1. Faça upload de documentos (PDFs) 2. Processe e indexe o conteúdo 3. Faça perguntas sobre os documentos """)  # Inicialização do Groq e QA Chain @st.cache_resource def initialize_qa_system():     try:         handler = GroqHandler()         handler.initialize()         qa_system = QAChain(handler)         return qa_system     except Exception as e:         st.error(f"Erro ao inicializar o sistema: {str(e)}")         return None  # Função para processar documento def process_document(uploaded_file):     try:         # Cria um arquivo temporário para o PDF         with NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:             tmp_file.write(uploaded_file.getvalue())             tmp_path = tmp_file.name                  # Processa o documento         processor = DocumentProcessor(tmp_path)         docs = processor.process_pdf()                  # Remove o arquivo temporário         os.unlink(tmp_path)                  return docs     except Exception as e:         st.error(f"Erro ao processar o documento: {str(e)}")         return None  # Função para extrair pensamento e resposta def extract_thought_and_answer(text):     # Procura por conteúdo entre tags <think> e </think>     thought_match = re.search(r'<think>(.*?)</think>', text, re.DOTALL)          if thought_match:         thought = thought_match.group(1).strip()         # Remove a parte do pensamento do texto original para obter apenas a resposta         answer = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()         return thought, answer     else:         # Se não encontrar tags de pensamento, retorna None para pensamento e o texto original como resposta         return None, text.strip()  # Inicializa o sistema de QA qa_system = initialize_qa_system()  # Sidebar para upload de documentos with st.sidebar:     st.header("Upload de Documentos")     uploaded_files = st.file_uploader(         "Escolha os arquivos PDF",         type=['pdf'],         accept_multiple_files=True     )          if uploaded_files:         st.write(f"Arquivos carregados: {len(uploaded_files)}")                  if st.button("Processar Documentos"):             with st.spinner("Processando documentos..."):                 for file in uploaded_files:                     st.write(f"Processando: {file.name}")                     docs = process_document(file)                     if docs:                         # Adiciona os documentos ao QA system                         qa_system.add_documents(docs)                         st.success(f"{file.name} processado com sucesso!")                     else:                         st.error(f"Erro ao processar {file.name}")  # Área principal para perguntas st.header("Faça sua Pergunta")  # Checkbox para mostrar/ocultar pensamento show_thought = st.checkbox("Mostrar processo de pensamento", value=False)  # Input da pergunta question = st.text_input("Digite sua pergunta:")  if question:     if not qa_system:         st.error("Sistema não inicializado corretamente.")     else:         with st.spinner("Processando sua pergunta..."):             try:                 # Processa a pergunta                 result = qa_system.query(question)                                  # Extrai pensamento e resposta                 thought, answer = extract_thought_and_answer(result['resposta'])                                  # Exibe a resposta                 st.subheader("Resposta:")                                  # Mostra o pensamento se a opção estiver marcada e existir pensamento                 if show_thought and thought:                     with st.expander("Processo de Pensamento", expanded=True):                         st.markdown(thought)                                  # Mostra a resposta final                 st.markdown(answer)                                  # Exibe o status                 if result['status'] == 'sucesso':                     st.success("Pergunta processada com sucesso!")                 else:                     st.error("Erro ao processar a pergunta")                              except Exception as e:                 st.error(f"Erro ao processar a pergunta: {str(e)}")  # Footer st.markdown("---") st.markdown("Desenvolvido com ❤️ usando Streamlit e LangChain") 
+2025-02-17 21:06:21 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:06:21 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:07:22 - groq_handler - INFO - Processando pergunta: tenho um app  um aplicativo web interativo que permite ao usuário enviar documentos (como PDFs), extrair e indexar seu conteúdo e, em seguida, realizar perguntas sobre esse conteúdo. O sistema processa os documentos, integra-os a um mecanismo de perguntas e respostas e exibe as respostas obtidas. Além disso, há a opção de mostrar o raciocínio interno utilizado para chegar à resposta, fornecendo transparência no processo de tomada de decisão. A aplicação também inclui mecanismos de registro e tratamento de erros para garantir uma operação confiável.
+2025-02-17 21:07:22 - groq_handler - INFO - Processando pergunta: tenho um app  um aplicativo web interativo que permite ao usuário enviar documentos (como PDFs), extrair e indexar seu conteúdo e, em seguida, realizar perguntas sobre esse conteúdo. O sistema processa os documentos, integra-os a um mecanismo de perguntas e respostas e exibe as respostas obtidas. Além disso, há a opção de mostrar o raciocínio interno utilizado para chegar à resposta, fornecendo transparência no processo de tomada de decisão. A aplicação também inclui mecanismos de registro e tratamento de erros para garantir uma operação confiável.
+2025-02-17 21:07:23 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:07:23 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:07:31 - groq_handler - INFO - Processando pergunta: tenho um app  um aplicativo web interativo que permite ao usuário enviar documentos (como PDFs), extrair e indexar seu conteúdo e, em seguida, realizar perguntas sobre esse conteúdo. O sistema processa os documentos, integra-os a um mecanismo de perguntas e respostas e exibe as respostas obtidas. Além disso, há a opção de mostrar o raciocínio interno utilizado para chegar à resposta, fornecendo transparência no processo de tomada de decisão. A aplicação também inclui mecanismos de registro e tratamento de erros para garantir uma operação confiável.
+2025-02-17 21:07:31 - groq_handler - INFO - Processando pergunta: tenho um app  um aplicativo web interativo que permite ao usuário enviar documentos (como PDFs), extrair e indexar seu conteúdo e, em seguida, realizar perguntas sobre esse conteúdo. O sistema processa os documentos, integra-os a um mecanismo de perguntas e respostas e exibe as respostas obtidas. Além disso, há a opção de mostrar o raciocínio interno utilizado para chegar à resposta, fornecendo transparência no processo de tomada de decisão. A aplicação também inclui mecanismos de registro e tratamento de erros para garantir uma operação confiável.
+2025-02-17 21:07:33 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:07:33 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:08:42 - groq_handler - INFO - Processando pergunta: consegue falar linguagem python?
+2025-02-17 21:08:42 - groq_handler - INFO - Processando pergunta: consegue falar linguagem python?
+2025-02-17 21:08:44 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:08:44 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:12:48 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
+2025-02-17 21:12:48 - langsmith_config - INFO - LangSmith configurado com sucesso
+2025-02-17 21:12:50 - retrieval_qa - INFO - Sistema RetrievalQA inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 21:12:50 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
+2025-02-17 21:12:50 - langsmith_config - INFO - LangSmith configurado com sucesso
+2025-02-17 21:12:52 - retrieval_qa - INFO - Sistema RetrievalQA inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 21:13:16 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
+2025-02-17 21:13:16 - langsmith_config - INFO - LangSmith configurado com sucesso
+2025-02-17 21:13:18 - retrieval_qa - INFO - Sistema RetrievalQA inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 21:13:18 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
+2025-02-17 21:13:18 - langsmith_config - INFO - LangSmith configurado com sucesso
+2025-02-17 21:13:20 - retrieval_qa - INFO - Sistema RetrievalQA inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 21:13:28 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
+2025-02-17 21:13:28 - langsmith_config - INFO - LangSmith configurado com sucesso
+2025-02-17 21:13:30 - retrieval_qa - INFO - Sistema RetrievalQA inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 21:13:30 - langsmith_config - INFO - Carregando variáveis de ambiente para LangSmith...
+2025-02-17 21:13:30 - langsmith_config - INFO - LangSmith configurado com sucesso
+2025-02-17 21:13:31 - retrieval_qa - INFO - Sistema RetrievalQA inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 21:19:07 - groq_handler - INFO - Carregando variáveis de ambiente...
+2025-02-17 21:19:07 - groq_handler - INFO - Carregando variáveis de ambiente...
+2025-02-17 21:19:07 - groq_handler - INFO - Inicializando modelo Groq: deepseek-r1-distill-llama-70b
+2025-02-17 21:19:07 - groq_handler - INFO - Inicializando modelo Groq: deepseek-r1-distill-llama-70b
+2025-02-17 21:19:07 - groq_handler - INFO - Modelo Groq inicializado com sucesso
+2025-02-17 21:19:07 - groq_handler - INFO - Modelo Groq inicializado com sucesso
+2025-02-17 21:19:25 - groq_handler - INFO - Processando pergunta: o que 
+2025-02-17 21:19:25 - groq_handler - INFO - Processando pergunta: o que 
+2025-02-17 21:19:26 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:19:26 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:19:33 - groq_handler - INFO - Processando pergunta: me diga o que 
+2025-02-17 21:19:33 - groq_handler - INFO - Processando pergunta: me diga o que 
+2025-02-17 21:19:33 - groq_handler - INFO - Processando pergunta: me diga o que 
+2025-02-17 21:19:33 - groq_handler - INFO - Processando pergunta: me diga o que 
+2025-02-17 21:19:34 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:19:34 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:19:34 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:19:34 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:19:42 - groq_handler - INFO - Processando pergunta: do que se trata esse rag?
+2025-02-17 21:19:42 - groq_handler - INFO - Processando pergunta: do que se trata esse rag?
+2025-02-17 21:19:43 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:19:43 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:30:36 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 21:30:36 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 21:30:36 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 21:30:38 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:30:38 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:30:38 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:33:56 - groq_handler - INFO - Carregando variáveis de ambiente...
+2025-02-17 21:33:56 - groq_handler - INFO - Inicializando modelo Groq: deepseek-r1-distill-llama-70b
+2025-02-17 21:33:56 - groq_handler - INFO - Modelo Groq inicializado com sucesso
+2025-02-17 21:33:56 - test_groq_handler - INFO - ==================================================
+Iniciando teste: general_question
+==================================================
+2025-02-17 21:33:56 - groq_handler - INFO - Processando pergunta: Quais são as principais características do Python?
+2025-02-17 21:33:58 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:33:58 - test_groq_handler - INFO - Pergunta: Quais são as principais características do Python?
+2025-02-17 21:33:58 - test_groq_handler - INFO - Contexto: Python é uma linguagem de programação de alto nível criada por Guido van Rossum.
+É conhecida por sua sintaxe clara e legível, sendo muito usada em desenvolvimento web,
+ciência de dados e inteligência artificial. Python tem uma grande comunidade e muitas bibliotecas.
+2025-02-17 21:33:58 - test_groq_handler - INFO - Resposta: <think>
+Ok, vou analisar a pergunta sobre as principais características do Python. Primeiro, lembro que o contexto fornecido menciona que Python é uma linguagem de alto nível criada por Guido van Rossum. Em seguida, destaca sua sintaxe clara e legível, o que facilita a leitura e escrita do código. Também está escrito que ela é muito usada em desenvolvimento web, ciência de dados e inteligência artificial. Além disso, o contexto ressalta que Python tem uma grande comunidade e muitas bibliotecas disponíveis. Portanto, para responder à pergunta, devo incluir essas características principais: sintaxe clara, uso em diferentes áreas e o suporte de bibliotecas e comunidade. Vou estruturar a resposta de forma objetiva, mencionando cada ponto de forma clara e concisa.
+</think>
+
+As principais características do Python incluem sua sintaxe clara e legível, ampla utilização em desenvolvimento web, ciência de dados e inteligência artificial, além de contar com uma grande comunidade e extensa variedade de bibliotecas.
+2025-02-17 21:33:58 - test_groq_handler - INFO - ==================================================
+Teste concluído com sucesso: general_question
+==================================================
+2025-02-17 21:33:58 - test_groq_handler - INFO - ==================================================
+Iniciando teste: document_analysis
+==================================================
+2025-02-17 21:33:58 - groq_handler - INFO - Processando documento - Fonte: documentacao_tecnica.pdf
+2025-02-17 21:33:58 - groq_handler - INFO - Pergunta: Qual é o principal objetivo do documento?
+2025-02-17 21:33:59 - groq_handler - INFO - Documento processado com sucesso
+2025-02-17 21:33:59 - test_groq_handler - INFO - Pergunta: Qual é o principal objetivo do documento?
+2025-02-17 21:33:59 - test_groq_handler - INFO - Fonte: documentacao_tecnica.pdf
+2025-02-17 21:33:59 - test_groq_handler - INFO - Resposta: <think>
+Primeiro, leio a pergunta que está sendo feita: "Qual é o principal objetivo do documento?". Em seguida, analiso o conteúdo fornecido para encontrar a resposta. O conteúdo menciona que o documento descreve a implementação de um sistema de processamento de linguagem natural usando Python e a biblioteca transformers, e que o sistema realiza análise de sentimentos, classificação de texto e responde perguntas sobre documentos. 
+
+Entendo que o objetivo principal é descrever como foi implementado esse sistema, destacando as tecnologias utilizadas e as funcionalidades específicas. Portanto, a resposta deve refletir esse propósito central do documento.
+</think>
+
+O principal objetivo do documento é descrever a implementação de um sistema de processamento de linguagem natural usando Python e a biblioteca transformers, destacando suas funcionalidades como análise de sentimentos, classificação de texto e resposta a perguntas sobre documentos.
+
+Fonte: documentacao_tecnica.pdf
+2025-02-17 21:33:59 - test_groq_handler - INFO - ==================================================
+Teste concluído com sucesso: document_analysis
+==================================================
+2025-02-17 21:35:07 - test_vector_store - INFO - ==================================================
+Iniciando teste: store_creation
+==================================================
+2025-02-17 21:35:07 - test_vector_store - ERROR - ==================================================
+Teste falhou: store_creation
+Erro: 'VectorStore' object has no attribute 'create_store'
+==================================================
+2025-02-17 21:35:07 - test_vector_store - INFO - ==================================================
+Iniciando teste: similarity_search
+==================================================
+2025-02-17 21:35:07 - test_vector_store - ERROR - ==================================================
+Teste falhou: similarity_search
+Erro: 'VectorStore' object has no attribute 'create_store'
+==================================================
+2025-02-17 21:35:07 - test_vector_store - INFO - ==================================================
+Iniciando teste: store_persistence
+==================================================
+2025-02-17 21:35:07 - test_vector_store - ERROR - ==================================================
+Teste falhou: store_persistence
+Erro: 'VectorStore' object has no attribute 'create_store'
+==================================================
+2025-02-17 21:35:51 - test_vector_store - INFO - ==================================================
+Iniciando teste: store_creation
+==================================================
+2025-02-17 21:35:52 - test_vector_store - INFO - VectorStore criado com sucesso
+2025-02-17 21:35:52 - test_vector_store - INFO - ==================================================
+Teste concluído com sucesso: store_creation
+==================================================
+2025-02-17 21:35:52 - test_vector_store - INFO - ==================================================
+Iniciando teste: similarity_search
+==================================================
+2025-02-17 21:35:52 - test_vector_store - INFO - Query: Como Python é usado em IA?
+2025-02-17 21:35:52 - test_vector_store - INFO - Resultado 1: Python é uma linguagem de programação versátil
+2025-02-17 21:35:52 - test_vector_store - INFO - Resultado 2: Python é uma linguagem de programação versátil
+2025-02-17 21:35:52 - test_vector_store - INFO - Resultado 3: Processamento de Linguagem Natural trabalha com textos
+2025-02-17 21:35:52 - test_vector_store - INFO - Resultado 4: Processamento de Linguagem Natural trabalha com textos
+2025-02-17 21:35:52 - test_vector_store - INFO - Resultado 5: Machine Learning é um subcampo da Inteligência Artificial
+2025-02-17 21:35:52 - test_vector_store - INFO - ==================================================
+Teste concluído com sucesso: similarity_search
+==================================================
+2025-02-17 21:35:52 - test_vector_store - INFO - ==================================================
+Iniciando teste: store_persistence
+==================================================
+2025-02-17 21:35:54 - test_vector_store - ERROR - ==================================================
+Teste falhou: store_persistence
+Erro: Número de documentos carregados não corresponde ao original
+==================================================
+2025-02-17 21:36:42 - test_vector_store - INFO - ==================================================
+Iniciando teste: store_creation
+==================================================
+2025-02-17 21:36:46 - test_vector_store - INFO - VectorStore criado com sucesso
+2025-02-17 21:36:46 - test_vector_store - INFO - ==================================================
+Teste concluído com sucesso: store_creation
+==================================================
+2025-02-17 21:36:46 - test_vector_store - INFO - ==================================================
+Iniciando teste: similarity_search
+==================================================
+2025-02-17 21:36:48 - test_vector_store - INFO - Query: Como Python é usado em IA?
+2025-02-17 21:36:48 - test_vector_store - INFO - Resultado 1: Python é uma linguagem de programação versátil
+2025-02-17 21:36:48 - test_vector_store - INFO - Resultado 2: Processamento de Linguagem Natural trabalha com textos
+2025-02-17 21:36:48 - test_vector_store - INFO - Resultado 3: Machine Learning é um subcampo da Inteligência Artificial
+2025-02-17 21:36:48 - test_vector_store - INFO - ==================================================
+Teste concluído com sucesso: similarity_search
+==================================================
+2025-02-17 21:36:48 - test_vector_store - INFO - ==================================================
+Iniciando teste: store_persistence
+==================================================
+2025-02-17 21:36:52 - test_vector_store - INFO - Store salvo e carregado com sucesso em tests/data/test_store.pkl
+2025-02-17 21:36:52 - test_vector_store - INFO - ==================================================
+Teste concluído com sucesso: store_persistence
+==================================================
+2025-02-17 21:37:46 - test_document_processor - ERROR - Erro inesperado: Arquivo PDF de teste não encontrado
+2025-02-17 21:43:40 - groq_handler - INFO - Processando pergunta: quero saber mais sobre os sinais cripto mas nao quero comprar ainda
+2025-02-17 21:43:40 - groq_handler - INFO - Processando pergunta: quero saber mais sobre os sinais cripto mas nao quero comprar ainda
+2025-02-17 21:43:40 - groq_handler - INFO - Processando pergunta: quero saber mais sobre os sinais cripto mas nao quero comprar ainda
+2025-02-17 21:43:40 - groq_handler - INFO - Processando pergunta: quero saber mais sobre os sinais cripto mas nao quero comprar ainda
+2025-02-17 21:43:42 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:43:42 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:43:42 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:43:42 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 21:44:04 - test_document_processor - INFO - ==================================================
+Iniciando teste: pdf_exists
+==================================================
+2025-02-17 21:44:04 - test_document_processor - INFO - PDF encontrado em: tests/data/test.pdf
+2025-02-17 21:44:04 - test_document_processor - INFO - ==================================================
+Teste concluído com sucesso: pdf_exists
+==================================================
+2025-02-17 21:44:04 - test_document_processor - INFO - ==================================================
+Iniciando teste: pdf_loading
+==================================================
+2025-02-17 21:44:04 - test_document_processor - INFO - Número de páginas carregadas: 14
+2025-02-17 21:44:04 - test_document_processor - INFO - Conteúdo da primeira página: PROMPT (Instruções) 
+ Quem é o seu Agente? 
+ Atue como um Closer de vendas especialista com 20 anos de experiência em fechar 
+ negócios para a empresa [Eternity Scale do professor Alexandre Bianchi]. ...
+2025-02-17 21:44:04 - test_document_processor - INFO - ==================================================
+Teste concluído com sucesso: pdf_loading
+==================================================
+2025-02-17 21:44:04 - test_document_processor - INFO - ==================================================
+Iniciando teste: pdf_metadata
+==================================================
+2025-02-17 21:44:04 - test_document_processor - INFO - Metadados encontrados:
+2025-02-17 21:44:04 - test_document_processor - INFO - producer: Skia/PDF m133
+2025-02-17 21:44:04 - test_document_processor - INFO - creator: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-02-17 21:44:04 - test_document_processor - INFO - creationdate: 2025-02-17T17:37:48+00:00
+2025-02-17 21:44:04 - test_document_processor - INFO - title: Untitled document - Google Docs
+2025-02-17 21:44:04 - test_document_processor - INFO - moddate: 2025-02-17T17:37:48+00:00
+2025-02-17 21:44:04 - test_document_processor - INFO - source: tests/data/test.pdf
+2025-02-17 21:44:04 - test_document_processor - INFO - total_pages: 6
+2025-02-17 21:44:04 - test_document_processor - INFO - page: 0
+2025-02-17 21:44:04 - test_document_processor - INFO - page_label: 1
+2025-02-17 21:44:04 - test_document_processor - INFO - chunk_id: 0
+2025-02-17 21:44:04 - test_document_processor - INFO - ==================================================
+Teste concluído com sucesso: pdf_metadata
+==================================================

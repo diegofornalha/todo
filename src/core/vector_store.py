@@ -9,6 +9,10 @@ from ..utils.logging_config import setup_logger
 
 logger = setup_logger('vector_store', 'logs/vector_store.log')
 
+class VectorStoreError(Exception):
+    """Exceção personalizada para erros do VectorStore."""
+    pass
+
 class VectorStore:
     def __init__(
         self,

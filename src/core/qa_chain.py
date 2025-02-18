@@ -1,7 +1,11 @@
-from typing import List, Dict, Any
-from .vector_store import VectorStore
-from ..models.llm_handler import LLMHandler
+# Standard library imports
 import logging
+from typing import List, Dict, Any
+import textwrap
+
+# Local imports
+from .vector_store import VectorStore
+from ..models.base_handler import BaseLLMHandler
 from ..utils.logging_config import setup_logger
 
 logger = setup_logger('qa_chain', 'logs/qa_chain.log')
@@ -9,7 +13,7 @@ logger = setup_logger('qa_chain', 'logs/qa_chain.log')
 class QAChain:
     def __init__(
         self,
-        llm_handler: LLMHandler,
+        llm_handler: BaseLLMHandler,
         embeddings_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     ):
         """
@@ -61,7 +65,10 @@ class QAChain:
                 logger.warning("Nenhum documento relevante encontrado")
                 return {
                     "pergunta": question,
-                    "resposta": "Não encontrei informações relevantes para responder sua pergunta.",
+                    "resposta": textwrap.dedent("""
+                        Não encontrei informações relevantes para responder sua pergunta.
+                        Por favor, tente reformular a pergunta ou fornecer mais contexto.
+                    """).strip(),
                     "status": "sem_resultados"
                 }
             
@@ -87,7 +94,10 @@ class QAChain:
             logger.error(f"Erro ao processar pergunta: {str(e)}")
             return {
                 "pergunta": question,
-                "resposta": "Erro ao processar a pergunta",
+                "resposta": textwrap.dedent("""
+                    Desculpe, ocorreu um erro ao processar sua pergunta.
+                    Por favor, tente novamente em alguns instantes.
+                """).strip(),
                 "status": "erro",
                 "erro": str(e)
             }

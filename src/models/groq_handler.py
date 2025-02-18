@@ -1,10 +1,17 @@
-from typing import Dict, Any, Optional
-from langchain_groq import ChatGroq
-from langchain_core.messages import HumanMessage
-from dotenv import load_dotenv
+# Standard library imports
 import os
 import json
-from .llm_handler import LLMHandler
+from datetime import datetime
+from typing import Dict, Any
+
+# Third-party imports
+from dotenv import load_dotenv
+from langchain_groq import ChatGroq
+from langchain_core.messages import HumanMessage
+import textwrap
+
+# Local imports
+from .base_handler import BaseLLMHandler
 from ..utils.logging_config import setup_logger
 from ..config.prompt_templates import QA_PROMPT, DOCUMENT_PROMPT
 
@@ -18,7 +25,7 @@ class GroqConfigError(Exception):
     """Exceção personalizada para erros de configuração."""
     pass
 
-class GroqHandler(LLMHandler):
+class GroqHandler(BaseLLMHandler):
     def __init__(
         self,
         model_name: str = "deepseek-r1-distill-llama-70b",
@@ -52,7 +59,10 @@ class GroqHandler(LLMHandler):
             
             api_key = os.getenv("GROQ_API_KEY")
             if not api_key:
-                raise GroqConfigError("GROQ_API_KEY não encontrada nas variáveis de ambiente")
+                raise GroqConfigError(textwrap.dedent("""
+                    GROQ_API_KEY não encontrada nas variáveis de ambiente.
+                    Certifique-se de configurar a chave no arquivo .env
+                """).strip())
             
             logger.info(f"Inicializando modelo Groq: {self.model_name}")
             self.handler = ChatGroq(
@@ -107,9 +117,7 @@ class GroqHandler(LLMHandler):
                 "metadata": {
                     "model": self.model_name,
                     "temperature": self.temperature,
-                    "timestamp": logger.handlers[0].formatter.formatTime(
-                        logger.makeRecord('', 0, '', 0, '', (), None)
-                    )
+                    "timestamp": datetime.now().isoformat()
                 }
             }
             
@@ -170,9 +178,7 @@ class GroqHandler(LLMHandler):
                 "metadata": {
                     "model": self.model_name,
                     "temperature": self.temperature,
-                    "timestamp": logger.handlers[0].formatter.formatTime(
-                        logger.makeRecord('', 0, '', 0, '', (), None)
-                    )
+                    "timestamp": datetime.now().isoformat()
                 }
             }
             
