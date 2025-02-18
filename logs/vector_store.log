@@ -1,0 +1,438 @@
+2025-02-17 22:22:08 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:22:08 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:22:09 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:22:09 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:24:52 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:24:52 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:24:52 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:24:52 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:24:52 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:24:52 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:24:53 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:24:53 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:25:27 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:25:27 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:25:27 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:25:27 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:25:27 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:25:27 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:25:27 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:25:27 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:25:27 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:25:27 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:25:27 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:25:27 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:26:49 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:26:49 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:26:49 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:26:49 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:26:49 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:26:49 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:26:49 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:26:49 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:26:50 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:26:50 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:26:50 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:26:50 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:26:50 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:26:50 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:26:50 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:26:50 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:11 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:11 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:11 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:11 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:11 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:11 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:11 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:11 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:11 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:11 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:11 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:11 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:11 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:11 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:11 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:11 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:20 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:27:20 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:27:20 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:27:20 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:27:20 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:20 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:20 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:20 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:20 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:20 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:20 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:20 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:20 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:20 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:20 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:20 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:27 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:27 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:27 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:27 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:27 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:27 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:27 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:27 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:27 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:27 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:27 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:27 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:27 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:27 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:27 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:27 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:39 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:39 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:39 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:39 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:27:39 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:39 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:39 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:39 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:27:39 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:39 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:39 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:39 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:27:39 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:39 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:39 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:27:39 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:28:16 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:28:25 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:28:25 - vector_store - INFO - Adicionando 14 documentos ao store
+2025-02-17 22:28:25 - vector_store - INFO - Gerando embeddings para 14 textos
+2025-02-17 22:28:26 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:28:26 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:28:26 - vector_store - INFO - Reinicializando o KNN
+2025-02-17 22:28:26 - vector_store - INFO - KNN reinicializado com sucesso
+2025-02-17 22:30:09 - vector_store - INFO - Realizando busca por similaridade: 'sinais cripto?'
+2025-02-17 22:30:09 - vector_store - INFO - Realizando busca por similaridade: 'sinais cripto?'
+2025-02-17 22:30:09 - vector_store - INFO - Realizando busca por similaridade: 'sinais cripto?'
+2025-02-17 22:30:09 - vector_store - INFO - Realizando busca por similaridade: 'sinais cripto?'
+2025-02-17 22:30:09 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:09 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:09 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:09 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:09 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:09 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:09 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:09 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:09 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:09 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:09 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:09 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:20 - vector_store - INFO - Realizando busca por similaridade: 'quero lucrar'
+2025-02-17 22:30:20 - vector_store - INFO - Realizando busca por similaridade: 'quero lucrar'
+2025-02-17 22:30:20 - vector_store - INFO - Realizando busca por similaridade: 'quero lucrar'
+2025-02-17 22:30:20 - vector_store - INFO - Realizando busca por similaridade: 'quero lucrar'
+2025-02-17 22:30:20 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:20 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:20 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:20 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:21 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:21 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:21 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:21 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:21 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:21 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:21 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:21 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:35 - vector_store - INFO - Realizando busca por similaridade: 'mas se eu perder dinheiro?'
+2025-02-17 22:30:35 - vector_store - INFO - Realizando busca por similaridade: 'mas se eu perder dinheiro?'
+2025-02-17 22:30:35 - vector_store - INFO - Realizando busca por similaridade: 'mas se eu perder dinheiro?'
+2025-02-17 22:30:35 - vector_store - INFO - Realizando busca por similaridade: 'mas se eu perder dinheiro?'
+2025-02-17 22:30:35 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:35 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:35 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:35 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:30:35 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:35 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:35 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:35 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:30:35 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:35 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:35 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:30:35 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:42:31 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:42:33 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:42:33 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:42:35 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:42:35 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:42:35 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:42:35 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:42:36 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:42:36 - vector_store - INFO - Adicionando 3 documentos ao store
+2025-02-17 22:42:36 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:42:36 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:42:38 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:42:38 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:42:38 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:42:38 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:42:40 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:42:40 - vector_store - INFO - Realizando busca por similaridade: 'teste'
+2025-02-17 22:42:40 - vector_store - WARNING - Nenhum documento indexado
+2025-02-17 22:42:40 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:42:42 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:42:42 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:42:42 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:43:17 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:43:19 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:43:19 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:43:20 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:43:20 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:43:20 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:43:21 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:43:21 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:43:23 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:43:23 - vector_store - INFO - Adicionando 3 documentos ao store
+2025-02-17 22:43:23 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:43:23 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:43:23 - vector_store - INFO - Realizando busca por similaridade: 'Como funciona busca por similaridade?'
+2025-02-17 22:43:23 - vector_store - INFO - Encontrados 1 resultados
+2025-02-17 22:43:23 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:43:25 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:43:25 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:43:25 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:43:25 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:43:25 - vector_store - INFO - Salvando VectorStore em: /var/folders/93/90sx2q9n1zvf9kn9qqyrbkx80000gn/T/tmp9d4yc2qd/test_store
+2025-02-17 22:43:25 - vector_store - INFO - VectorStore salvo com sucesso
+2025-02-17 22:43:25 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:43:27 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:43:27 - vector_store - INFO - Carregando VectorStore de: /var/folders/93/90sx2q9n1zvf9kn9qqyrbkx80000gn/T/tmp9d4yc2qd/test_store
+2025-02-17 22:43:27 - vector_store - INFO - VectorStore carregado com sucesso
+2025-02-17 22:43:27 - vector_store - INFO - Realizando busca por similaridade: 'busca por similaridade'
+2025-02-17 22:43:27 - vector_store - INFO - Encontrados 0 resultados
+2025-02-17 22:43:27 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:43:28 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:43:28 - vector_store - INFO - Realizando busca por similaridade: 'teste'
+2025-02-17 22:43:28 - vector_store - WARNING - Nenhum documento indexado
+2025-02-17 22:43:28 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:43:30 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:43:30 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:43:30 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:43:30 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:43:30 - vector_store - INFO - Realizando busca por similaridade: 'Como fazer busca por similaridade?'
+2025-02-17 22:43:31 - vector_store - INFO - Encontrados 0 resultados
+2025-02-17 22:44:07 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:44:09 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:44:09 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:44:11 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:44:11 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:44:11 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:44:11 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:44:11 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:44:13 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:44:13 - vector_store - INFO - Adicionando 3 documentos ao store
+2025-02-17 22:44:13 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:44:13 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:44:13 - vector_store - INFO - Realizando busca por similaridade: 'Como funciona busca por similaridade?'
+2025-02-17 22:44:13 - vector_store - INFO - Encontrados 0 resultados
+2025-02-17 22:44:13 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:44:14 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:44:14 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:44:14 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:44:14 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:44:14 - vector_store - INFO - Salvando VectorStore em: /var/folders/93/90sx2q9n1zvf9kn9qqyrbkx80000gn/T/tmp865pebc2/test_store
+2025-02-17 22:44:14 - vector_store - INFO - VectorStore salvo com sucesso
+2025-02-17 22:44:14 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:44:16 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:44:16 - vector_store - INFO - Carregando VectorStore de: /var/folders/93/90sx2q9n1zvf9kn9qqyrbkx80000gn/T/tmp865pebc2/test_store
+2025-02-17 22:44:16 - vector_store - INFO - VectorStore carregado com sucesso
+2025-02-17 22:44:16 - vector_store - INFO - Realizando busca por similaridade: 'busca por similaridade'
+2025-02-17 22:44:16 - vector_store - INFO - Encontrados 0 resultados
+2025-02-17 22:44:16 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:44:18 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:44:18 - vector_store - INFO - Realizando busca por similaridade: 'teste'
+2025-02-17 22:44:18 - vector_store - WARNING - Nenhum documento indexado
+2025-02-17 22:44:18 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:44:19 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:44:19 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:44:19 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:44:19 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:44:19 - vector_store - INFO - Realizando busca por similaridade: 'Como fazer busca por similaridade?'
+2025-02-17 22:44:19 - vector_store - INFO - Encontrados 2 resultados
+2025-02-17 22:45:15 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:17 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:17 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:19 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:19 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:45:19 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:45:19 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:45:19 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:22 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:22 - vector_store - INFO - Adicionando 3 documentos ao store
+2025-02-17 22:45:22 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:45:22 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:45:22 - vector_store - INFO - Realizando busca por similaridade: 'Como funciona busca por similaridade?'
+2025-02-17 22:45:22 - vector_store - INFO - Encontrados 2 resultados
+2025-02-17 22:45:22 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:24 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:24 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:45:24 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:45:24 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:45:24 - vector_store - INFO - Salvando VectorStore em: /var/folders/93/90sx2q9n1zvf9kn9qqyrbkx80000gn/T/tmpsq2htu4a/test_store
+2025-02-17 22:45:24 - vector_store - INFO - VectorStore salvo com sucesso
+2025-02-17 22:45:24 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:26 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:26 - vector_store - INFO - Carregando VectorStore de: /var/folders/93/90sx2q9n1zvf9kn9qqyrbkx80000gn/T/tmpsq2htu4a/test_store
+2025-02-17 22:45:26 - vector_store - INFO - VectorStore carregado com sucesso
+2025-02-17 22:45:26 - vector_store - INFO - Realizando busca por similaridade: 'busca por similaridade'
+2025-02-17 22:45:26 - vector_store - INFO - Encontrados 1 resultados
+2025-02-17 22:45:26 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:28 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:28 - vector_store - INFO - Realizando busca por similaridade: 'teste'
+2025-02-17 22:45:28 - vector_store - WARNING - Nenhum documento indexado
+2025-02-17 22:45:28 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:30 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:30 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:45:30 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:45:30 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:45:30 - vector_store - INFO - Realizando busca por similaridade: 'Como fazer busca por similaridade?'
+2025-02-17 22:45:30 - vector_store - INFO - Encontrados 0 resultados
+2025-02-17 22:45:52 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:55 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:55 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:57 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:57 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:45:57 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:45:57 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:45:57 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:45:59 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:45:59 - vector_store - INFO - Adicionando 3 documentos ao store
+2025-02-17 22:45:59 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:45:59 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:45:59 - vector_store - INFO - Realizando busca por similaridade: 'Como funciona busca por similaridade?'
+2025-02-17 22:45:59 - vector_store - INFO - Encontrados 2 resultados
+2025-02-17 22:45:59 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:46:00 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:46:00 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:46:00 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:46:00 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:46:00 - vector_store - INFO - Salvando VectorStore em: /var/folders/93/90sx2q9n1zvf9kn9qqyrbkx80000gn/T/tmp6eta49db/test_store
+2025-02-17 22:46:00 - vector_store - INFO - VectorStore salvo com sucesso
+2025-02-17 22:46:00 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:46:02 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:46:02 - vector_store - INFO - Carregando VectorStore de: /var/folders/93/90sx2q9n1zvf9kn9qqyrbkx80000gn/T/tmp6eta49db/test_store
+2025-02-17 22:46:02 - vector_store - INFO - VectorStore carregado com sucesso
+2025-02-17 22:46:02 - vector_store - INFO - Realizando busca por similaridade: 'busca por similaridade'
+2025-02-17 22:46:02 - vector_store - INFO - Encontrados 1 resultados
+2025-02-17 22:46:02 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:46:04 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:46:04 - vector_store - INFO - Realizando busca por similaridade: 'teste'
+2025-02-17 22:46:04 - vector_store - WARNING - Nenhum documento indexado
+2025-02-17 22:46:04 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:46:05 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:46:05 - vector_store - INFO - Adicionando 2 documentos ao store
+2025-02-17 22:46:05 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:46:05 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:46:05 - vector_store - INFO - Realizando busca por similaridade: 'Como fazer busca por similaridade?'
+2025-02-17 22:46:05 - vector_store - INFO - Encontrados 2 resultados
+2025-02-17 22:48:15 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:48:17 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:48:17 - vector_store - INFO - Adicionando 14 documentos ao store
+2025-02-17 22:48:17 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:48:17 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:48:17 - vector_store - INFO - Realizando busca por similaridade: 'O que é um agente de IA?'
+2025-02-17 22:48:17 - vector_store - INFO - Encontrados 1 resultados
+2025-02-17 22:48:17 - vector_store - INFO - Realizando busca por similaridade: 'Como funciona a análise de sentimento em criptomoedas?'
+2025-02-17 22:48:17 - vector_store - INFO - Encontrados 0 resultados
+2025-02-17 22:48:47 - vector_store - INFO - Inicializando VectorStore com modelo: sentence-transformers/all-MiniLM-L6-v2
+2025-02-17 22:48:49 - vector_store - INFO - VectorStore inicializado com sucesso
+2025-02-17 22:48:49 - vector_store - INFO - Adicionando 27 documentos ao store
+2025-02-17 22:48:49 - vector_store - INFO - Primeira adição de documentos
+2025-02-17 22:48:50 - vector_store - INFO - Documentos adicionados com sucesso
+2025-02-17 22:48:50 - vector_store - INFO - Realizando busca por similaridade: 'Como um agente de IA pode ajudar na venda de produtos?'
+2025-02-17 22:48:50 - vector_store - INFO - Encontrados 5 resultados
+2025-02-17 22:48:50 - vector_store - INFO - Realizando busca por similaridade: 'Quais são as melhores práticas para atendimento ao cliente?'
+2025-02-17 22:48:50 - vector_store - INFO - Encontrados 5 resultados
+2025-02-17 22:48:50 - vector_store - INFO - Realizando busca por similaridade: 'O que não fazer durante uma negociação?'
+2025-02-17 22:48:50 - vector_store - INFO - Encontrados 5 resultados
+2025-02-17 22:48:50 - vector_store - INFO - Realizando busca por similaridade: 'Como melhorar a comunicação com o cliente?'
+2025-02-17 22:48:50 - vector_store - INFO - Encontrados 5 resultados
+2025-02-17 22:48:50 - vector_store - INFO - Realizando busca por similaridade: 'Quais são as estratégias de vendas recomendadas?'
+2025-02-17 22:48:50 - vector_store - INFO - Encontrados 5 resultados
+2025-02-17 22:49:12 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:49:12 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:49:12 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:49:12 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:49:12 - vector_store - INFO - Realizando busca por similaridade: 'oi'
+2025-02-17 22:49:12 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:12 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:12 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:12 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:12 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:14 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:14 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:14 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:14 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:14 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:14 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:14 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:14 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:14 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:14 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:24 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:49:24 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:49:24 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:49:24 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:49:24 - vector_store - INFO - Realizando busca por similaridade: 'tudo bem?'
+2025-02-17 22:49:24 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:24 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:24 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:24 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:24 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:24 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:24 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:24 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:24 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:24 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:24 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:24 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:24 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:24 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:24 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:32 - vector_store - INFO - Realizando busca por similaridade: 'cripto'
+2025-02-17 22:49:32 - vector_store - INFO - Realizando busca por similaridade: 'cripto'
+2025-02-17 22:49:32 - vector_store - INFO - Realizando busca por similaridade: 'cripto'
+2025-02-17 22:49:32 - vector_store - INFO - Realizando busca por similaridade: 'cripto'
+2025-02-17 22:49:32 - vector_store - INFO - Realizando busca por similaridade: 'cripto'
+2025-02-17 22:49:32 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:32 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:32 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:32 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:32 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:49:32 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:32 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:32 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:32 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:32 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:49:32 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:32 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:32 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:32 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:49:32 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:53:21 - vector_store - INFO - Realizando busca por similaridade: 'quem alexandre?'
+2025-02-17 22:53:21 - vector_store - INFO - Realizando busca por similaridade: 'quem alexandre?'
+2025-02-17 22:53:21 - vector_store - INFO - Realizando busca por similaridade: 'quem alexandre?'
+2025-02-17 22:53:21 - vector_store - INFO - Realizando busca por similaridade: 'quem alexandre?'
+2025-02-17 22:53:21 - vector_store - INFO - Realizando busca por similaridade: 'quem alexandre?'
+2025-02-17 22:53:21 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:53:21 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:53:21 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:53:21 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:53:21 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-17 22:53:21 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:53:21 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:53:21 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:53:21 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:53:21 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-17 22:53:21 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:53:21 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:53:21 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:53:21 - vector_store - INFO - Encontrados 3 resultados
+2025-02-17 22:53:21 - vector_store - INFO - Encontrados 3 resultados

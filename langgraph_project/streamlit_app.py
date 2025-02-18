@@ -1,11 +1,13 @@
 import streamlit as st
-from todo_graph import create_todo_graph
+from rag_graph import create_rag_graph
 import json
 import re
+import plotly.graph_objects as go
+from datetime import datetime
 
 st.set_page_config(
-    page_title="Assistente de Prioridades TODO",
-    page_icon="🎯",
+    page_title="Assistente RAG em Tempo Real",
+    page_icon="🔍",
     layout="wide"
 )
 
@@ -25,105 +27,131 @@ def extract_thought_and_answer(text):
 # Inicializa o estado da sessão
 if 'messages' not in st.session_state:
     st.session_state.messages = [
-        {"role": "assistant", "content": "Olá! Eu sou seu assistente de prioridades. Posso ajudar você a:\n\n" + 
-         "- Organizar suas tarefas por prioridade\n" +
-         "- Sugerir a melhor ordem para executá-las\n" +
-         "- Manter você focado no que é importante\n\n" +
+        {"role": "assistant", "content": "Olá! Eu sou seu assistente RAG. Posso ajudar você a:\n\n" + 
+         "- Responder perguntas usando nossa base de conhecimento\n" +
+         "- Analisar documentos em tempo real\n" +
+         "- Fornecer respostas contextualizadas\n\n" +
          "Como posso ajudar você hoje?"}
     ]
     
-if 'task_list' not in st.session_state:
-    st.session_state.task_list = []
+if 'stats' not in st.session_state:
+    st.session_state.stats = {
+        "queries": 0,
+        "successful_queries": 0,
+        "query_history": [],
+        "response_times": []
+    }
 
 # Inicializa o grafo
 try:
-    graph = create_todo_graph()
+    graph = create_rag_graph()
 except Exception as e:
     st.error(f"Erro ao inicializar o assistente: {str(e)}")
     st.stop()
 
 # Layout principal
-st.title("🎯 Assistente de Prioridades")
+st.title("🔍 Assistente RAG em Tempo Real")
 
-# Sidebar para configurações e lista de tarefas
+# Sidebar para estatísticas e visualizações
 with st.sidebar:
-    st.subheader("📋 Tarefas Prioritárias")
+    st.header("📊 Estatísticas")
     
-    if st.session_state.task_list:
-        for i, task in enumerate(st.session_state.task_list):
-            col_task, col_done = st.columns([4,1])
-            with col_task:
-                st.write(f"{i+1}. {task}")
-            with col_done:
-                if st.button("✓", key=f"complete_{i}", help="Marcar como concluída"):
-                    input_data = {
-                        "messages": [{"role": "user", "content": f"Marcar tarefa {i+1} como concluída"}],
-                        "next_step": "",
-                        "task_list": st.session_state.task_list,
-                        "current_task": None
-                    }
-                    try:
-                        result = graph.invoke(input_data)
-                        st.session_state.task_list = result["task_list"]
-                        st.success(f"Tarefa '{task}' concluída!")
-                        st.rerun()
-                    except Exception as e:
-                        st.error(f"Erro ao concluir tarefa: {str(e)}")
-    else:
-        st.info("Nenhuma tarefa pendente")
+    # Métricas principais
+    col1, col2 = st.columns(2)
+    with col1:
+        st.metric("Total de Consultas", st.session_state.stats["queries"])
+    with col2:
+        success_rate = (st.session_state.stats["successful_queries"] / 
+                       st.session_state.stats["queries"] * 100 
+                       if st.session_state.stats["queries"] > 0 else 0)
+        st.metric("Taxa de Sucesso", f"{success_rate:.1f}%")
     
-    # Configurações
-    st.subheader("⚙️ Configurações")
-    show_thoughts = st.toggle("Mostrar processo de pensamento", value=False)
+    # Gráfico de tipos de consulta
+    if st.session_state.stats["query_history"]:
+        st.subheader("Tipos de Consulta")
+        query_types = [q["type"] for q in st.session_state.stats["query_history"]]
+        type_counts = {t: query_types.count(t) for t in set(query_types)}
+        
+        fig = go.Figure(data=[
+            go.Pie(
+                labels=list(type_counts.keys()),
+                values=list(type_counts.values()),
+                hole=.3
+            )
+        ])
+        fig.update_layout(margin=dict(t=0, b=0, l=0, r=0))
+        st.plotly_chart(fig, use_container_width=True)
+    
+    # Histórico de consultas
+    st.subheader("Histórico de Consultas")
+    for query in reversed(st.session_state.stats["query_history"][-5:]):
+        with st.expander(f"{query['timestamp']} - {query['type']}"):
+            st.write(f"**Pergunta:** {query['question']}")
+            st.write(f"**Tempo:** {query['response_time']:.2f}s")
+            st.write(f"**Fontes:** {', '.join(query['sources'])}")
 
 # Container principal para o chat
 chat_container = st.container()
 
-# Área de input sempre no final
-with st.container():
-    # Linha horizontal para separar
-    st.markdown("---")
-    
-    # Input do usuário
-    if prompt := st.chat_input("Digite sua mensagem...", key="chat_input"):
-        # Adiciona mensagem do usuário
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        
-        # Prepara input para o grafo
-        input_data = {
-            "messages": st.session_state.messages,
-            "next_step": "",
-            "task_list": st.session_state.task_list,
-            "current_task": None
-        }
-        
-        # Processa com o grafo
-        try:
-            result = graph.invoke(input_data)
-            st.session_state.task_list = result["task_list"]
-            
-            # Extrai pensamento e resposta
-            thought, answer = extract_thought_and_answer(result.get("messages", [])[-1]["content"])
-            
-            # Adiciona resposta do assistente
-            st.session_state.messages.append({"role": "assistant", "content": answer})
-            
-            # Se houver pensamento e a opção estiver ativada, adiciona como mensagem especial
-            if thought and show_thoughts:
-                st.session_state.messages.append({"role": "system", "content": thought})
-                
-            st.rerun()
-        except Exception as e:
-            st.error(f"Erro ao processar mensagem: {str(e)}")
-
-# Mostra mensagens no container do chat
+# Área de chat
 with chat_container:
     for message in st.session_state.messages:
-        if message["role"] == "system" and show_thoughts:
-            # Mostra pensamentos em um expander
-            with st.expander("💭 Processo de Pensamento", expanded=True):
-                st.markdown(message["content"])
-        else:
-            # Mostra mensagens normais
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"]) 
+        with st.chat_message(message["role"]):
+            if message["role"] == "assistant":
+                thought, answer = extract_thought_and_answer(message["content"])
+                if thought:
+                    with st.expander("💭 Processo de Pensamento"):
+                        st.write(thought)
+                st.write(answer)
+            else:
+                st.write(message["content"])
+
+# Input do usuário
+if prompt := st.chat_input("Digite sua pergunta..."):
+    # Adiciona a mensagem do usuário
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    
+    # Processa com o grafo
+    try:
+        start_time = datetime.now()
+        result = graph.invoke({
+            "messages": st.session_state.messages,
+            "query_type": "",
+            "stats": st.session_state.stats,
+            "retrieval_qa": None
+        })
+        
+        # Atualiza estatísticas
+        response_time = (datetime.now() - start_time).total_seconds()
+        st.session_state.stats["queries"] += 1
+        st.session_state.stats["successful_queries"] += 1
+        st.session_state.stats["response_times"].append(response_time)
+        
+        # Extrai informações da resposta
+        thought, answer = extract_thought_and_answer(result["messages"][-1]["content"])
+        query_type = result.get("query_type", "unknown")
+        sources = []
+        if thought:
+            source_match = re.search(r'Fontes consultadas: (.*)', thought)
+            if source_match:
+                sources = [s.strip() for s in source_match.group(1).split(',')]
+        
+        # Registra no histórico
+        st.session_state.stats["query_history"].append({
+            "timestamp": datetime.now().strftime("%H:%M:%S"),
+            "type": query_type,
+            "question": prompt,
+            "response_time": response_time,
+            "sources": sources
+        })
+        
+        # Atualiza a interface
+        st.session_state.messages = result["messages"]
+        st.rerun()
+        
+    except Exception as e:
+        st.error(f"Erro ao processar sua pergunta: {str(e)}")
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": f"Desculpe, ocorreu um erro ao processar sua pergunta: {str(e)}"
+        }) 

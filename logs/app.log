@@ -1,0 +1,120 @@
+2025-02-17 22:22:09 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:22:09 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:24:53 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:24:53 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:24:54 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:24:54 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:25:27 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:25:27 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:25:27 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:25:28 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:25:28 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:25:28 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:26:50 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:26:50 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:26:50 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:26:50 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:27:04 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:04 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:04 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:04 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:11 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:11 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:11 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:11 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:15 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:15 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:15 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:15 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:20 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:27:20 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:27:20 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:27:20 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:27:21 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:21 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:21 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:21 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:27 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:27 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:27 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:27 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:39 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:39 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:39 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:39 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:27:40 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:40 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:40 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:27:40 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:28:16 - groq_handler - INFO - Carregando variáveis de ambiente...
+2025-02-17 22:28:16 - groq_handler - INFO - Inicializando modelo Groq: deepseek-r1-distill-llama-70b
+2025-02-17 22:28:16 - groq_handler - INFO - Modelo Groq inicializado com sucesso
+2025-02-17 22:28:25 - streamlit_app - INFO - Documento content/AGENTE IA .pdf processado com sucesso
+2025-02-17 22:30:09 - groq_handler - INFO - Processando pergunta: sinais cripto?
+2025-02-17 22:30:09 - groq_handler - INFO - Processando pergunta: sinais cripto?
+2025-02-17 22:30:09 - groq_handler - INFO - Processando pergunta: sinais cripto?
+2025-02-17 22:30:09 - groq_handler - INFO - Processando pergunta: sinais cripto?
+2025-02-17 22:30:12 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:12 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:12 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:12 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:21 - groq_handler - INFO - Processando pergunta: quero lucrar
+2025-02-17 22:30:21 - groq_handler - INFO - Processando pergunta: quero lucrar
+2025-02-17 22:30:21 - groq_handler - INFO - Processando pergunta: quero lucrar
+2025-02-17 22:30:21 - groq_handler - INFO - Processando pergunta: quero lucrar
+2025-02-17 22:30:22 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:22 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:22 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:22 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:35 - groq_handler - INFO - Processando pergunta: mas se eu perder dinheiro?
+2025-02-17 22:30:35 - groq_handler - INFO - Processando pergunta: mas se eu perder dinheiro?
+2025-02-17 22:30:35 - groq_handler - INFO - Processando pergunta: mas se eu perder dinheiro?
+2025-02-17 22:30:35 - groq_handler - INFO - Processando pergunta: mas se eu perder dinheiro?
+2025-02-17 22:30:37 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:37 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:37 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:30:37 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:14 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:49:14 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:49:14 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:49:14 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:49:14 - groq_handler - INFO - Processando pergunta: oi
+2025-02-17 22:49:19 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:19 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:19 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:19 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:19 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:24 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:49:24 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:49:24 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:49:24 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:49:24 - groq_handler - INFO - Processando pergunta: tudo bem?
+2025-02-17 22:49:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:30 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:32 - groq_handler - INFO - Processando pergunta: cripto
+2025-02-17 22:49:32 - groq_handler - INFO - Processando pergunta: cripto
+2025-02-17 22:49:32 - groq_handler - INFO - Processando pergunta: cripto
+2025-02-17 22:49:32 - groq_handler - INFO - Processando pergunta: cripto
+2025-02-17 22:49:32 - groq_handler - INFO - Processando pergunta: cripto
+2025-02-17 22:49:34 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:34 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:34 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:34 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:49:34 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:53:21 - groq_handler - INFO - Processando pergunta: quem alexandre?
+2025-02-17 22:53:21 - groq_handler - INFO - Processando pergunta: quem alexandre?
+2025-02-17 22:53:21 - groq_handler - INFO - Processando pergunta: quem alexandre?
+2025-02-17 22:53:21 - groq_handler - INFO - Processando pergunta: quem alexandre?
+2025-02-17 22:53:21 - groq_handler - INFO - Processando pergunta: quem alexandre?
+2025-02-17 22:53:24 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:53:24 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:53:24 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:53:24 - groq_handler - INFO - Resposta processada com sucesso
+2025-02-17 22:53:24 - groq_handler - INFO - Resposta processada com sucesso

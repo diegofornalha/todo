@@ -165,10 +165,8 @@ with st.container():
                             st.markdown(answer)
                         
                         # Exibe o status
-                        if result['status'] == 'sucesso':
-                            st.success("Pergunta processada com sucesso!")
-                        else:
-                            st.error("Erro ao processar a pergunta")
+                            # A mensagem de erro foi removida deste fluxo. Em caso de exceção, a mensagem será exibida no bloco "except".
+
                     
                 except Exception as e:
                     st.error(f"Erro ao processar a pergunta: {str(e)}")

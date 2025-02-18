@@ -1,9 +1,11 @@
 from typing import List, Dict, Any
 import numpy as np
 from sentence_transformers import SentenceTransformer
-from sklearn.neighbors import NearestNeighbors
+from langchain_community.vectorstores import FAISS
+from langchain_core.documents import Document
+from langchain_core.embeddings import Embeddings
 import os
-import pickle
+import json
 import logging
 from ..utils.logging_config import setup_logger
 
@@ -13,41 +15,42 @@ class VectorStoreError(Exception):
     """Exceção personalizada para erros do VectorStore."""
     pass
 
+class SentenceTransformerEmbeddings(Embeddings):
+    """Wrapper para SentenceTransformer compatível com LangChain."""
+    
+    def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2"):
+        """Inicializa o wrapper."""
+        self.model = SentenceTransformer(model_name)
+        
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        """Gera embeddings para uma lista de textos."""
+        embeddings = self.model.encode(texts, convert_to_numpy=True)
+        return embeddings.tolist()
+        
+    def embed_query(self, text: str) -> List[float]:
+        """Gera embedding para um texto."""
+        embedding = self.model.encode(text, convert_to_numpy=True)
+        return embedding.tolist()
+
 class VectorStore:
     def __init__(
         self,
         model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
-        metric: str = "cosine"
+        similarity_threshold: float = 0.6
     ):
         """
-        Inicializa o VectorStore com um modelo de embeddings.
+        Inicializa o VectorStore com FAISS.
         
         Args:
             model_name: Nome do modelo de embeddings
-            metric: Métrica de similaridade para KNN
+            similarity_threshold: Limiar de similaridade para busca (0.0 a 1.0)
         """
         logger.info(f"Inicializando VectorStore com modelo: {model_name}")
-        self.model = SentenceTransformer(model_name)
-        self.metric = metric
-        self.vectors = None
+        self.embeddings = SentenceTransformerEmbeddings(model_name)
+        self.similarity_threshold = similarity_threshold
+        self.vectorstore = None
         self.documents = []
-        self.knn = None
         logger.info("VectorStore inicializado com sucesso")
-
-    def _get_embeddings(self, texts: List[str]) -> np.ndarray:
-        """
-        Gera embeddings para uma lista de textos.
-        
-        Args:
-            texts: Lista de textos
-            
-        Returns:
-            Array numpy com os embeddings
-        """
-        logger.info(f"Gerando embeddings para {len(texts)} textos")
-        embeddings = self.model.encode(texts, convert_to_numpy=True)
-        logger.info("Embeddings gerados com sucesso")
-        return embeddings
 
     def add_documents(self, documents: List[Dict[str, Any]]) -> None:
         """
@@ -58,27 +61,25 @@ class VectorStore:
         """
         logger.info(f"Adicionando {len(documents)} documentos ao store")
         
-        # Extrai os textos dos documentos
-        texts = [doc['content'] for doc in documents]
-        embeddings = self._get_embeddings(texts)
+        # Converte para o formato Document do LangChain
+        docs = [
+            Document(
+                page_content=doc['content'],
+                metadata=doc.get('metadata', {})
+            )
+            for doc in documents
+        ]
         
-        if self.vectors is None:
+        # Adiciona ao vectorstore
+        if self.vectorstore is None:
             logger.info("Primeira adição de documentos")
-            self.vectors = embeddings
+            self.vectorstore = FAISS.from_documents(docs, self.embeddings)
         else:
-            logger.info("Concatenando novos vetores aos existentes")
-            self.vectors = np.vstack([self.vectors, embeddings])
+            logger.info("Adicionando novos documentos ao vectorstore existente")
+            self.vectorstore.add_documents(docs)
         
         self.documents.extend(documents)
-        
-        # Reinicializa o KNN
-        logger.info("Reinicializando o KNN")
-        self.knn = NearestNeighbors(
-            n_neighbors=min(5, len(self.documents)),
-            metric=self.metric
-        )
-        self.knn.fit(self.vectors)
-        logger.info("KNN reinicializado com sucesso")
+        logger.info("Documentos adicionados com sucesso")
 
     def similarity_search(
         self,
@@ -86,7 +87,7 @@ class VectorStore:
         k: int = 5
     ) -> List[Dict[str, Any]]:
         """
-        Realiza busca por similaridade.
+        Realiza busca por similaridade usando FAISS.
         
         Args:
             query: Texto da consulta
@@ -97,28 +98,33 @@ class VectorStore:
         """
         logger.info(f"Realizando busca por similaridade: '{query}'")
         
-        if self.vectors is None or not self.documents:
+        if self.vectorstore is None:
             logger.warning("Nenhum documento indexado")
             return []
         
-        # Gera embedding da query
-        query_embedding = self._get_embeddings([query])
-        
-        # Busca os vizinhos mais próximos
+        # Busca documentos similares
         k = min(k, len(self.documents))
-        distances, indices = self.knn.kneighbors(
-            query_embedding,
-            n_neighbors=k
+        docs_and_scores = self.vectorstore.similarity_search_with_score(
+            query,
+            k=k
         )
         
         # Prepara os resultados
         results = []
-        for i, (dist, idx) in enumerate(zip(distances[0], indices[0])):
-            doc = self.documents[idx]
-            results.append({
-                **doc,
-                "score": 1 - dist  # Converte distância em score
-            })
+        for doc, score in docs_and_scores:
+            # FAISS retorna distância L2 ao quadrado
+            # Convertemos para similaridade cosseno aproximada
+            # Normaliza para [0,1] usando uma função sigmoide
+            similarity = 1 / (1 + np.exp(score - 1))
+            if similarity >= self.similarity_threshold:
+                results.append({
+                    'content': doc.page_content,
+                    'metadata': doc.metadata,
+                    'score': similarity
+                })
+        
+        # Ordena por similaridade
+        results.sort(key=lambda x: x['score'], reverse=True)
         
         logger.info(f"Encontrados {len(results)} resultados")
         return results
@@ -131,16 +137,17 @@ class VectorStore:
             path: Caminho para salvar
         """
         logger.info(f"Salvando VectorStore em: {path}")
-        os.makedirs(os.path.dirname(path), exist_ok=True)
+        save_dir = os.path.dirname(path)
+        os.makedirs(save_dir, exist_ok=True)
         
-        state = {
-            "vectors": self.vectors,
-            "documents": self.documents,
-            "metric": self.metric
-        }
-        
-        with open(path, 'wb') as f:
-            pickle.dump(state, f)
+        # Salva vectorstore
+        if self.vectorstore:
+            self.vectorstore.save_local(path + ".faiss")
+            
+        # Salva documentos
+        with open(path + ".json", "w") as f:
+            json.dump(self.documents, f, indent=2)
+            
         logger.info("VectorStore salvo com sucesso")
         
     def load(self, path: str) -> None:
@@ -152,23 +159,26 @@ class VectorStore:
         """
         logger.info(f"Carregando VectorStore de: {path}")
         
-        if not os.path.exists(path):
-            error_msg = f"Arquivo não encontrado: {path}"
+        # Verifica se os arquivos existem
+        if not os.path.exists(path + ".faiss"):
+            error_msg = f"Arquivo FAISS não encontrado: {path}.faiss"
+            logger.error(error_msg)
+            raise FileNotFoundError(error_msg)
+            
+        if not os.path.exists(path + ".json"):
+            error_msg = f"Arquivo de documentos não encontrado: {path}.json"
             logger.error(error_msg)
             raise FileNotFoundError(error_msg)
         
-        with open(path, 'rb') as f:
-            state = pickle.load(f)
+        # Carrega vectorstore
+        self.vectorstore = FAISS.load_local(
+            path + ".faiss",
+            self.embeddings,
+            allow_dangerous_deserialization=True
+        )
         
-        self.vectors = state["vectors"]
-        self.documents = state["documents"]
-        self.metric = state["metric"]
-        
-        if self.vectors is not None:
-            self.knn = NearestNeighbors(
-                n_neighbors=min(5, len(self.documents)),
-                metric=self.metric
-            )
-            self.knn.fit(self.vectors)
+        # Carrega documentos
+        with open(path + ".json", "r") as f:
+            self.documents = json.load(f)
             
         logger.info("VectorStore carregado com sucesso") 

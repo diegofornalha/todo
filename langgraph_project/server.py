@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI, HTTPException, APIRouter, Request
-from todo_graph import create_todo_graph
+from rag_graph import create_rag_graph
 from cors_config import configure_cors
 import uvicorn
 from pydantic import BaseModel
@@ -11,8 +11,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = FastAPI(
-    title="LangGraph TODO API",
-    description="API para gerenciamento de tarefas usando LangGraph",
+    title="LangGraph RAG API",
+    description="API para processamento de consultas RAG em tempo real",
     version="1.0.0"
 )
 
@@ -24,63 +24,56 @@ graphs_router = APIRouter(prefix="/graphs")
 
 # Inicializa o grafo
 try:
-    graph = create_todo_graph()
+    graph = create_rag_graph()
 except Exception as e:
     print(f"Erro ao criar grafo: {e}")
     raise
 
 class GraphInput(BaseModel):
     messages: List[Dict]
-    next_step: str
-    task_list: List[str]
-    current_task: Optional[str] = None
-
-class Assistant(BaseModel):
-    id: str
-    name: str
-    description: str
+    query_type: str
+    stats: Dict[str, Any]
+    retrieval_qa: Optional[Dict] = None
 
 @app.get("/")
 async def root():
-    return {"message": "LangGraph TODO API está funcionando!"}
+    return {"message": "LangGraph RAG API está funcionando!"}
 
-@app.get("/ok")
-async def health_check():
-    return {"ok": True}
-
-@app.get("/info")
-@graphs_router.get("/info")
-async def get_info():
-    return {
-        "version": "1.0.0",
-        "name": "LangGraph TODO API",
-        "description": "API para gerenciamento de tarefas usando LangGraph"
-    }
-
-@app.get("/graphs")
-async def list_graphs():
-    return {"graphs": ["todo"]}
-
-@app.post("/assistants/search")
-@graphs_router.post("/assistants/search")
-async def search_assistants():
-    assistants = [
-        Assistant(
-            id="todo",
-            name="TODO Assistant",
-            description="Assistente para gerenciamento de tarefas"
-        )
-    ]
-    return {"assistants": assistants}
-
-@app.post("/invoke")
-@graphs_router.post("/invoke")
-async def invoke_graph(input_data: GraphInput):
+@app.post("/query")
+async def process_query(input_data: GraphInput):
+    """
+    Processa uma consulta RAG.
+    
+    Args:
+        input_data: Dados de entrada para o grafo
+        
+    Returns:
+        Resultado do processamento
+    """
     try:
         result = graph.invoke(dict(input_data))
         return result
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(
+            status_code=500,
+            detail=f"Erro ao processar consulta: {str(e)}"
+        )
+
+@app.get("/stats")
+async def get_stats():
+    """Retorna estatísticas do sistema RAG."""
+    try:
+        return {
+            "total_queries": graph.get_stats().get("queries", 0),
+            "successful_queries": graph.get_stats().get("successful_queries", 0),
+            "success_rate": graph.get_stats().get("success_rate", 0.0),
+            "avg_response_time": graph.get_stats().get("avg_response_time", 0.0)
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Erro ao obter estatísticas: {str(e)}"
+        )
 
 # Rota genérica para lidar com qualquer método HTTP
 @app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH"])

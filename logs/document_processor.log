@@ -1,0 +1,5 @@
+2025-02-17 22:28:25 - document_processor - INFO - DocumentProcessor inicializado para: content/AGENTE IA .pdf
+2025-02-17 22:28:25 - document_processor - INFO - Processando PDF: content/AGENTE IA .pdf
+2025-02-17 22:28:25 - document_processor - INFO - Carregadas 6 páginas do PDF
+2025-02-17 22:28:25 - document_processor - INFO - Documento dividido em 14 chunks
+2025-02-17 22:28:25 - document_processor - INFO - Processamento concluído com sucesso
