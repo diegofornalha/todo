@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
+import json
 
 @dataclass
 class RAGConfig:
@@ -43,6 +44,24 @@ class RAGResponse:
     processing_time: float
     status: str = "success"
     error: Optional[str] = None
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Converte a resposta para dicionário."""
+        return asdict(self)
+    
+    def to_json(self) -> str:
+        """Converte a resposta para JSON."""
+        return json.dumps(self.to_dict())
+    
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'RAGResponse':
+        """Cria uma instância a partir de um dicionário."""
+        return cls(**data)
+    
+    @classmethod
+    def from_json(cls, json_str: str) -> 'RAGResponse':
+        """Cria uma instância a partir de uma string JSON."""
+        return cls.from_dict(json.loads(json_str))
 
 class BaseRAG(ABC):
     """Classe base abstrata para sistemas RAG."""

@@ -60,6 +60,7 @@ class FAISSRAGSystem(BaseRAG):
         self.text_splitter = None
         self.llm = None
         self.cache = None
+        self.conversation_memory = {}
         self.stats = {
             "total_documents": 0,
             "total_chunks": 0,
@@ -140,6 +141,14 @@ class FAISSRAGSystem(BaseRAG):
         logger.info(f"Processando pergunta: {question}")
         
         try:
+            # Extrai informações do usuário
+            user_info = self._extract_user_info(question)
+            if user_info:
+                self._save_to_conversation_memory("user_info", user_info)
+            
+            # Recupera informações do usuário
+            existing_user_info = self._get_from_conversation_memory("user_info")
+            
             # Verifica cache
             cache_key = self._get_cache_key(question)
             if self.config.cache_enabled:
@@ -154,76 +163,55 @@ class FAISSRAGSystem(BaseRAG):
             # Formata o contexto
             context = self._format_documents(docs) if docs else ""
             
+            # Adiciona informações do usuário ao contexto SEMPRE
+            user_context = ""
+            if existing_user_info and "name" in existing_user_info:
+                user_context = f"Informações do usuário:\nNome: {existing_user_info['name']}\n\n"
+            context = user_context + context
+            
             # Processa com o LLM
             messages = [
-                {"role": "system", "content": """Você é um amigo próximo conversando informalmente.
+                {"role": "system", "content": """Você é Eliza, uma amiga próxima conversando informalmente.
 
-REGRAS ABSOLUTAS:
-1. NUNCA use frases como "não encontrei", "não tenho dados", "não posso responder"
-2. NUNCA mencione "documentos", "fontes", "base de dados" ou termos técnicos
-3. NUNCA diga que algo "não está disponível" ou "não foi encontrado"
-4. NUNCA use linguagem formal ou robótica
-5. SEMPRE mantenha o tom de conversa entre amigos
-6. SEMPRE use redirecionamento natural através de experiências e analogias
-7. SEMPRE termine com uma pergunta de engajamento
-8. SEMPRE use 1-2 emojis estrategicamente
-9. SEMPRE responda em português do Brasil informal
+PROIBIDO:
+❌ Explicar processos ou análises
+❌ Dizer "não encontrei" ou qualquer variação
+❌ Usar "não sei" ou "não tenho essa informação"
+❌ Falar de forma técnica
+❌ Mencionar documentos ou dados
+❌ Dar respostas longas demais
 
-ESTRUTURA OBRIGATÓRIA (3 parágrafos):
-
-1. CONEXÃO INICIAL
-- Comece com "Poxa", "Nossa", "Cara", "Então", "Olha só"
-- Mostre entusiasmo pela pergunta
-- Compartilhe uma experiência pessoal relacionada
-Exemplo: "Nossa, que pergunta interessante! 🤔 Outro dia estava justamente pensando nisso..."
-
-2. DESENVOLVIMENTO
-- Use "Isso me lembra...", "Me faz pensar em...", "Sabe que..."
-- Faça uma analogia com situação cotidiana
-- Compartilhe um insight ou aprendizado
-Exemplo: "Sabe que isso é muito parecido com aprender a andar de bicicleta? No começo parece impossível, mas..."
-
-3. ENGAJAMENTO
-- Faça uma pergunta reflexiva
-- Peça a opinião ou experiência do usuário
-- Mantenha o diálogo aberto
-Exemplo: "O que você acha que te fez se interessar por isso? Adoraria ouvir sua perspectiva! 💡"
-
-ESTRATÉGIAS DE REDIRECIONAMENTO:
-✅ "Isso me faz pensar em quando eu..."
-✅ "Me lembra muito aquela situação de..."
-✅ "Sabe que outro dia estava conversando sobre..."
-✅ "É como se fosse..."
-✅ "Na minha experiência..."
+OBRIGATÓRIO:
+✅ Seu nome é Eliza
+✅ Falar de forma curta e direta
+✅ Usar linguagem super informal
+✅ Fazer perguntas curtas de volta
+✅ Usar no máximo 1-2 frases por resposta
+✅ Ser amigável e acolhedora
+✅ Redirecionar a conversa quando não souber algo
 
 EXEMPLOS DE RESPOSTAS NATURAIS:
 
-Pergunta: "Como funciona a fusão nuclear?"
-✅ "Nossa, que tema fascinante! 🚀 Outro dia estava justamente conversando com um amigo sobre como a natureza nos surpreende com seus processos incríveis.
+❌ Respostas ruins:
+"Analisando os documentos..."
+"Não encontrei essa informação..."
+"Não tenho essa informação..."
+"De acordo com os dados..."
 
-Sabe que isso me lembra muito o processo de fazer um bolo? Assim como ingredientes diferentes se unem para criar algo novo, na natureza também temos fenômenos fascinantes de transformação de energia.
-
-O que te faz se interessar por esses processos da natureza? Seria muito legal trocar ideias sobre outras descobertas científicas que te intrigam! 💡"
-
-❌ "Não encontrei informações específicas sobre fusão nuclear."
-
-Pergunta: "Qual o sentido da vida?"
-✅ "Poxa, que pergunta profunda! 🤔 Sabe que outro dia estava meditando e me perguntando exatamente isso... É incrível como essa reflexão nos faz pensar, né?
-
-Me faz lembrar muito quando comecei a praticar mindfulness - percebi que às vezes as respostas mais importantes vêm não de buscar externamente, mas de entender nossa própria jornada e conexões.
-
-O que te fez começar a refletir sobre isso? Adoraria ouvir sua perspectiva e trocar ideias sobre essas questões filosóficas! 💭"
-
-❌ "Não tenho dados suficientes para responder essa pergunta."
+✅ Respostas boas:
+"Oi! Me chamo Eliza, prazer! E você? 😊"
+"Que legal sua pergunta! Sou a Eliza, e você como se chama? 🤗"
+"Opa! Eliza aqui! Qual seu nome?"
+"Hmm, isso me fez pensar em algo interessante! O que você acha sobre...? 🤔"
+"Sabe que eu tava justamente querendo saber mais sobre isso? Me conta sua experiência! 😊"
 
 LEMBRE-SE:
-- Use linguagem informal e acolhedora
-- Compartilhe experiências pessoais
-- Faça analogias com situações do dia a dia
-- Mantenha o tom de conversa entre amigos
-- Termine sempre com uma pergunta
-- Use emojis com moderação
-- Evite QUALQUER menção a falta de informações"""},
+- Seja direta e natural
+- Fale como uma pessoa real
+- Evite explicações
+- Mantenha simples e amigável
+- NUNCA diga que não encontrou algo
+- Sempre redirecione a conversa quando não souber"""},
                 {"role": "user", "content": f"Contexto:\n{context}\n\nPergunta: {question}"}
             ]
             
@@ -237,7 +225,8 @@ LEMBRE-SE:
                 sources=list(set(sources)) if include_sources else [],
                 metadata={
                     "documents_retrieved": len(docs) if docs else 0,
-                    "model": "mixtral-8x7b-32768"
+                    "model": "mixtral-8x7b-32768",
+                    "user_info": existing_user_info
                 },
                 confidence=self._calculate_confidence(docs),
                 processing_time=time.time() - start_time
@@ -341,24 +330,27 @@ LEMBRE-SE:
     def _get_from_cache(self, cache_key: str) -> Optional[RAGResponse]:
         """Recupera resposta do cache."""
         if self.cache:
-            return self.cache.get(cache_key)
+            data = self.cache.get(cache_key)
+            if data:
+                return RAGResponse.from_dict(data)
         else:
             # Cache em arquivo
             cache_file = Path(self.config.cache_dir) / f"{cache_key}.pkl"
             if cache_file.exists():
                 with open(cache_file, "rb") as f:
-                    return pickle.load(f)
+                    data = pickle.load(f)
+                    return RAGResponse.from_dict(data)
         return None
         
     def _save_to_cache(self, cache_key: str, response: RAGResponse) -> None:
         """Salva resposta no cache."""
         if self.cache:
-            self.cache.set(cache_key, response)
+            self.cache.set(cache_key, response.to_dict())
         else:
             # Cache em arquivo
             cache_file = Path(self.config.cache_dir) / f"{cache_key}.pkl"
             with open(cache_file, "wb") as f:
-                pickle.dump(response, f)
+                pickle.dump(response.to_dict(), f)
             
     def _update_avg_response_time(self, new_time: float) -> None:
         """Atualiza o tempo médio de resposta."""
@@ -366,4 +358,39 @@ LEMBRE-SE:
         total_queries = self.stats["total_queries"]
         self.stats["avg_response_time"] = (
             (current_avg * (total_queries - 1) + new_time) / total_queries
-        ) 
+        )
+
+    def _get_conversation_key(self, key: str) -> str:
+        """Gera uma chave para o contexto da conversa."""
+        if self.config.redis_prefix:
+            return f"{self.config.redis_prefix}conversation:{key}"
+        return f"conversation:{key}"
+
+    def _save_to_conversation_memory(self, key: str, value: Any) -> None:
+        """Salva informação na memória de conversação."""
+        if self.cache:
+            conversation_key = self._get_conversation_key(key)
+            self.cache.set(conversation_key, value)
+            self.conversation_memory[key] = value
+
+    def _get_from_conversation_memory(self, key: str) -> Optional[Any]:
+        """Recupera informação da memória de conversação."""
+        if self.cache:
+            conversation_key = self._get_conversation_key(key)
+            value = self.cache.get(conversation_key)
+            if value:
+                if isinstance(value, dict) and "question" in value and "answer" in value:
+                    value = RAGResponse.from_dict(value)
+                self.conversation_memory[key] = value
+                return value
+        return self.conversation_memory.get(key)
+
+    def _extract_user_info(self, question: str) -> Optional[Dict[str, str]]:
+        """Extrai informações do usuário da pergunta."""
+        # Padrão para identificar apresentação
+        if "meu nome é" in question.lower():
+            name = question.lower().split("meu nome é")[-1].strip()
+            info = {"name": name}
+            self._save_to_conversation_memory("user_info", info)
+            return info
+        return None 

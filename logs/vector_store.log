@@ -1,0 +1,48 @@
+2025-02-18 02:49:50 - vector_store - INFO - Realizando busca por similaridade: 'meu nome é Diego'
+2025-02-18 02:49:50 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 02:49:51 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 02:49:51 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 02:50:00 - vector_store - INFO - Realizando busca por similaridade: 'Qual é meu nome?'
+2025-02-18 02:50:00 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 02:50:00 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 02:50:00 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 02:58:09 - vector_store - INFO - Realizando busca por similaridade: 'me chamo Diego'
+2025-02-18 02:58:09 - vector_store - INFO - Realizando busca por similaridade: 'me chamo Diego'
+2025-02-18 02:58:09 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 02:58:09 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 02:58:10 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 02:58:10 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 02:58:10 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 02:58:10 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 03:01:09 - vector_store - INFO - Realizando busca por similaridade: 'meu nome é Diego'
+2025-02-18 03:01:09 - vector_store - INFO - Realizando busca por similaridade: 'meu nome é Diego'
+2025-02-18 03:01:09 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 03:01:09 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 03:01:09 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 03:01:09 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 03:01:09 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 03:01:09 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 03:01:24 - vector_store - INFO - Realizando busca por similaridade: 'qual é meu nome?'
+2025-02-18 03:01:24 - vector_store - INFO - Realizando busca por similaridade: 'qual é meu nome?'
+2025-02-18 03:01:24 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 03:01:24 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 03:01:25 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 03:01:25 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 03:01:25 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 03:01:25 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 03:01:33 - vector_store - INFO - Realizando busca por similaridade: 'qual é meu nome?'
+2025-02-18 03:01:33 - vector_store - INFO - Realizando busca por similaridade: 'qual é meu nome?'
+2025-02-18 03:01:33 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 03:01:33 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 03:01:33 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 03:01:33 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 03:01:33 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 03:01:33 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 03:04:24 - vector_store - INFO - Realizando busca por similaridade: 'qual é o Seu nome?'
+2025-02-18 03:04:24 - vector_store - INFO - Realizando busca por similaridade: 'qual é o Seu nome?'
+2025-02-18 03:04:24 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 03:04:24 - vector_store - INFO - Gerando embeddings para 1 textos
+2025-02-18 03:04:24 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 03:04:24 - vector_store - INFO - Embeddings gerados com sucesso
+2025-02-18 03:04:24 - vector_store - INFO - Encontrados 3 resultados
+2025-02-18 03:04:24 - vector_store - INFO - Encontrados 3 resultados
