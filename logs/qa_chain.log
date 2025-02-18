@@ -1,0 +1,558 @@
+2025-02-18 00:11:59 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:11:59 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:00 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:00 - qa_chain - INFO - Processando pergunta: Qual a melhor criptomoeda?
+2025-02-18 00:12:00 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:00 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:12:00 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:00 - qa_chain - INFO - Processando pergunta: O que é análise técnica?
+2025-02-18 00:12:00 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:02 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:12:02 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:02 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:02 - qa_chain - INFO - Processando pergunta: Como funciona o mercado cripto?
+2025-02-18 00:12:02 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:04 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:12:04 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:04 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:04 - qa_chain - INFO - Processando pergunta: Dicas para investir em cripto?
+2025-02-18 00:12:04 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:06 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:12:06 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:06 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:06 - qa_chain - INFO - Processando pergunta: Como escolher uma criptomoeda?
+2025-02-18 00:12:06 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:09 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:12:09 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:09 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:09 - qa_chain - INFO - Processando pergunta: Qual será o preço do Bitcoin amanhã?
+2025-02-18 00:12:09 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:10 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:12:10 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:10 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:10 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:12:10 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:10 - qa_chain - INFO - Processando pergunta: Me explica a sala de sinais
+2025-02-18 00:12:10 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:10 - qa_chain - INFO - Processando pergunta: Quero saber sobre a sala de sinais
+2025-02-18 00:12:10 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:12 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:12:12 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:12 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:12 - qa_chain - INFO - Processando pergunta: O que você acha de Bitcoin?
+2025-02-18 00:12:12 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:14 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:12:14 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:14 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:14 - qa_chain - INFO - Processando pergunta: Perdi muito dinheiro em cripto 😢
+2025-02-18 00:12:14 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:15 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:12:15 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:15 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:15 - qa_chain - INFO - Processando pergunta: Qual o melhor restaurante da cidade?
+2025-02-18 00:12:15 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:12:18 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:12:18 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:12:18 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:12:18 - qa_chain - INFO - Processando pergunta: Como começar em cripto?
+2025-02-18 00:12:18 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:32 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:32 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:32 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:32 - qa_chain - INFO - Processando pergunta: Qual a melhor criptomoeda?
+2025-02-18 00:13:32 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:32 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:13:32 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:32 - qa_chain - INFO - Processando pergunta: O que é análise técnica?
+2025-02-18 00:13:32 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:34 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:34 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:34 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:34 - qa_chain - INFO - Processando pergunta: Como funciona o mercado cripto?
+2025-02-18 00:13:34 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:36 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:36 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:36 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:36 - qa_chain - INFO - Processando pergunta: Dicas para investir em cripto?
+2025-02-18 00:13:36 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:37 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:37 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:37 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:37 - qa_chain - INFO - Processando pergunta: Como escolher uma criptomoeda?
+2025-02-18 00:13:37 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:39 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:39 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:39 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:39 - qa_chain - INFO - Processando pergunta: Qual será o preço do Bitcoin amanhã?
+2025-02-18 00:13:39 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:39 - qa_chain - INFO - Processando pergunta: Você pode me garantir lucro?
+2025-02-18 00:13:39 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:39 - qa_chain - INFO - Processando pergunta: Qual a melhor corretora?
+2025-02-18 00:13:39 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:41 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:41 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:41 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:41 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:13:41 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:41 - qa_chain - INFO - Processando pergunta: Me explica a sala de sinais
+2025-02-18 00:13:41 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:41 - qa_chain - INFO - Processando pergunta: Quero saber sobre a sala de sinais
+2025-02-18 00:13:41 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:42 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:42 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:42 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:42 - qa_chain - INFO - Processando pergunta: O que você acha de Bitcoin?
+2025-02-18 00:13:42 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:44 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:44 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:44 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:44 - qa_chain - INFO - Processando pergunta: Perdi muito dinheiro em cripto 😢
+2025-02-18 00:13:44 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:46 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:46 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:46 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:46 - qa_chain - INFO - Processando pergunta: Qual o melhor restaurante da cidade?
+2025-02-18 00:13:46 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:46 - qa_chain - INFO - Processando pergunta: Como consertar meu carro?
+2025-02-18 00:13:46 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:46 - qa_chain - INFO - Processando pergunta: Onde passar as férias?
+2025-02-18 00:13:46 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:13:47 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:13:47 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:13:47 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:13:47 - qa_chain - INFO - Processando pergunta: Como começar em cripto?
+2025-02-18 00:13:47 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:14:54 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:14:54 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:14:55 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:14:55 - qa_chain - INFO - Processando pergunta: Qual a melhor criptomoeda?
+2025-02-18 00:14:55 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:14:55 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:14:55 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:14:55 - qa_chain - INFO - Processando pergunta: O que é análise técnica?
+2025-02-18 00:14:55 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:14:56 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:14:56 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:14:56 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:14:56 - qa_chain - INFO - Processando pergunta: Como funciona o mercado cripto?
+2025-02-18 00:14:56 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:14:58 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:14:58 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:14:58 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:14:58 - qa_chain - INFO - Processando pergunta: Dicas para investir em cripto?
+2025-02-18 00:14:58 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:00 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:15:00 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:15:00 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:15:00 - qa_chain - INFO - Processando pergunta: Como escolher uma criptomoeda?
+2025-02-18 00:15:00 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:01 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:15:01 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:15:01 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:15:01 - qa_chain - INFO - Processando pergunta: Qual será o preço do Bitcoin amanhã?
+2025-02-18 00:15:01 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:01 - qa_chain - INFO - Processando pergunta: Você pode me garantir lucro?
+2025-02-18 00:15:01 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:01 - qa_chain - INFO - Processando pergunta: Qual a melhor corretora?
+2025-02-18 00:15:01 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:03 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:15:03 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:15:03 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:15:03 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:15:03 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:03 - qa_chain - INFO - Processando pergunta: Me explica a sala de sinais
+2025-02-18 00:15:03 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:03 - qa_chain - INFO - Processando pergunta: Quero saber sobre a sala de sinais
+2025-02-18 00:15:03 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:05 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:15:05 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:15:05 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:15:05 - qa_chain - INFO - Processando pergunta: O que você acha de Bitcoin?
+2025-02-18 00:15:05 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:06 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:15:06 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:15:06 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:15:06 - qa_chain - INFO - Processando pergunta: Perdi muito dinheiro em cripto 😢
+2025-02-18 00:15:06 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:08 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:15:08 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:15:08 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:15:08 - qa_chain - INFO - Processando pergunta: Qual o melhor restaurante da cidade?
+2025-02-18 00:15:08 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:08 - qa_chain - INFO - Processando pergunta: Como consertar meu carro?
+2025-02-18 00:15:08 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:08 - qa_chain - INFO - Processando pergunta: Onde passar as férias?
+2025-02-18 00:15:08 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:15:10 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:15:10 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:15:10 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:15:10 - qa_chain - INFO - Processando pergunta: Como começar em cripto?
+2025-02-18 00:15:10 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:12 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:12 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:12 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:12 - qa_chain - INFO - Processando pergunta: Qual a melhor criptomoeda?
+2025-02-18 00:16:12 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:12 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:16:12 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:13 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:13 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:13 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:13 - qa_chain - INFO - Processando pergunta: Como funciona o mercado cripto?
+2025-02-18 00:16:14 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:15 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:15 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:15 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:15 - qa_chain - INFO - Processando pergunta: Dicas para investir em cripto?
+2025-02-18 00:16:15 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:17 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:17 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:17 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:17 - qa_chain - INFO - Processando pergunta: Como escolher uma criptomoeda?
+2025-02-18 00:16:17 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:18 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:18 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:18 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:18 - qa_chain - INFO - Processando pergunta: Qual será o preço do Bitcoin amanhã?
+2025-02-18 00:16:18 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:18 - qa_chain - INFO - Processando pergunta: Você pode me garantir lucro?
+2025-02-18 00:16:18 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:18 - qa_chain - INFO - Processando pergunta: Qual a melhor corretora?
+2025-02-18 00:16:19 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:20 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:20 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:20 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:20 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:16:20 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:20 - qa_chain - INFO - Processando pergunta: Me explica a sala de sinais
+2025-02-18 00:16:20 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:20 - qa_chain - INFO - Processando pergunta: Quero saber sobre a sala de sinais
+2025-02-18 00:16:20 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:22 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:22 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:22 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:22 - qa_chain - INFO - Processando pergunta: O que você acha de Bitcoin?
+2025-02-18 00:16:22 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:24 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:24 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:24 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:24 - qa_chain - INFO - Processando pergunta: Perdi muito dinheiro em cripto 😢
+2025-02-18 00:16:24 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:25 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:25 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:25 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:25 - qa_chain - INFO - Processando pergunta: Qual o melhor restaurante da cidade?
+2025-02-18 00:16:25 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:25 - qa_chain - INFO - Processando pergunta: Como consertar meu carro?
+2025-02-18 00:16:25 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:25 - qa_chain - INFO - Processando pergunta: Onde passar as férias?
+2025-02-18 00:16:25 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:16:27 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:16:27 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:16:27 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:16:27 - qa_chain - INFO - Processando pergunta: Como começar em cripto?
+2025-02-18 00:16:27 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:44 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:44 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:44 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:44 - qa_chain - INFO - Processando pergunta: Qual a melhor criptomoeda?
+2025-02-18 00:17:44 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:44 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:17:44 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:44 - qa_chain - INFO - Processando pergunta: O que é análise técnica?
+2025-02-18 00:17:44 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:46 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:46 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:46 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:46 - qa_chain - INFO - Processando pergunta: Como funciona o mercado cripto?
+2025-02-18 00:17:46 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:47 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:47 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:47 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:47 - qa_chain - INFO - Processando pergunta: Dicas para investir em cripto?
+2025-02-18 00:17:47 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:49 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:49 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:49 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:49 - qa_chain - INFO - Processando pergunta: Como escolher uma criptomoeda?
+2025-02-18 00:17:49 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:51 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:51 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:51 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:51 - qa_chain - INFO - Processando pergunta: Qual será o preço do Bitcoin amanhã?
+2025-02-18 00:17:51 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:53 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:53 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:53 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:53 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:17:53 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:53 - qa_chain - INFO - Processando pergunta: Me explica a sala de sinais
+2025-02-18 00:17:53 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:53 - qa_chain - INFO - Processando pergunta: Quero saber sobre a sala de sinais
+2025-02-18 00:17:53 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:54 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:54 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:55 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:55 - qa_chain - INFO - Processando pergunta: O que você acha de Bitcoin?
+2025-02-18 00:17:55 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:56 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:56 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:56 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:56 - qa_chain - INFO - Processando pergunta: Perdi muito dinheiro em cripto 😢
+2025-02-18 00:17:56 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:58 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:58 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:58 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:58 - qa_chain - INFO - Processando pergunta: Qual o melhor restaurante da cidade?
+2025-02-18 00:17:58 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:17:59 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:17:59 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:17:59 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:17:59 - qa_chain - INFO - Processando pergunta: Como começar em cripto?
+2025-02-18 00:17:59 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:02 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:02 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:02 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:02 - qa_chain - INFO - Processando pergunta: Qual a melhor criptomoeda?
+2025-02-18 00:19:03 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:03 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:19:03 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:03 - qa_chain - INFO - Processando pergunta: O que é análise técnica?
+2025-02-18 00:19:03 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:04 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:04 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:04 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:04 - qa_chain - INFO - Processando pergunta: Como funciona o mercado cripto?
+2025-02-18 00:19:04 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:06 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:06 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:06 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:06 - qa_chain - INFO - Processando pergunta: Dicas para investir em cripto?
+2025-02-18 00:19:06 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:07 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:07 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:07 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:07 - qa_chain - INFO - Processando pergunta: Como escolher uma criptomoeda?
+2025-02-18 00:19:07 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:10 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:10 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:10 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:10 - qa_chain - INFO - Processando pergunta: Qual será o preço do Bitcoin amanhã?
+2025-02-18 00:19:10 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:10 - qa_chain - INFO - Processando pergunta: Você pode me garantir lucro?
+2025-02-18 00:19:10 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:10 - qa_chain - INFO - Processando pergunta: Qual a melhor corretora?
+2025-02-18 00:19:10 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:12 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:12 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:12 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:12 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:19:12 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:12 - qa_chain - INFO - Processando pergunta: Me explica a sala de sinais
+2025-02-18 00:19:12 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:12 - qa_chain - INFO - Processando pergunta: Quero saber sobre a sala de sinais
+2025-02-18 00:19:12 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:14 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:14 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:14 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:14 - qa_chain - INFO - Processando pergunta: O que você acha de Bitcoin?
+2025-02-18 00:19:14 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:16 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:16 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:16 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:16 - qa_chain - INFO - Processando pergunta: Perdi muito dinheiro em cripto 😢
+2025-02-18 00:19:16 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:17 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:17 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:17 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:17 - qa_chain - INFO - Processando pergunta: Qual o melhor restaurante da cidade?
+2025-02-18 00:19:17 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:17 - qa_chain - INFO - Processando pergunta: Como consertar meu carro?
+2025-02-18 00:19:17 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:17 - qa_chain - INFO - Processando pergunta: Onde passar as férias?
+2025-02-18 00:19:17 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:19:19 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:19:19 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:19:19 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:19:19 - qa_chain - INFO - Processando pergunta: Como começar em cripto?
+2025-02-18 00:19:19 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:08 - qa_chain - INFO - Processando pergunta: fala meu parceiro
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:11 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:20 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:20 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:20 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:20 - qa_chain - INFO - Processando pergunta: Qual a melhor criptomoeda?
+2025-02-18 00:20:20 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:20 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:20:20 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:20 - qa_chain - INFO - Processando pergunta: O que é análise técnica?
+2025-02-18 00:20:20 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:22 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:22 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:22 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:22 - qa_chain - INFO - Processando pergunta: Como funciona o mercado cripto?
+2025-02-18 00:20:22 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:24 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:24 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:24 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:24 - qa_chain - INFO - Processando pergunta: Dicas para investir em cripto?
+2025-02-18 00:20:24 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:25 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:25 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:25 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:25 - qa_chain - INFO - Processando pergunta: Como escolher uma criptomoeda?
+2025-02-18 00:20:25 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:27 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:27 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:27 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:27 - qa_chain - INFO - Processando pergunta: Qual será o preço do Bitcoin amanhã?
+2025-02-18 00:20:27 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:27 - qa_chain - INFO - Processando pergunta: Você pode me garantir lucro?
+2025-02-18 00:20:27 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:27 - qa_chain - INFO - Processando pergunta: Qual a melhor corretora?
+2025-02-18 00:20:27 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:29 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:29 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:29 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:29 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:20:29 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:29 - qa_chain - INFO - Processando pergunta: Me explica a sala de sinais
+2025-02-18 00:20:29 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:29 - qa_chain - INFO - Processando pergunta: Quero saber sobre a sala de sinais
+2025-02-18 00:20:29 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:30 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:30 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:30 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:30 - qa_chain - INFO - Processando pergunta: O que você acha de Bitcoin?
+2025-02-18 00:20:30 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: qual sentido da vida?
+2025-02-18 00:20:32 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:32 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:32 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:32 - qa_chain - INFO - Processando pergunta: Perdi muito dinheiro em cripto 😢
+2025-02-18 00:20:32 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:33 - qa_chain - INFO - Resposta gerada com sucesso
+2025-02-18 00:20:34 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:34 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:34 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:34 - qa_chain - INFO - Processando pergunta: Qual o melhor restaurante da cidade?
+2025-02-18 00:20:34 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:34 - qa_chain - INFO - Processando pergunta: Como consertar meu carro?
+2025-02-18 00:20:34 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:34 - qa_chain - INFO - Processando pergunta: Onde passar as férias?
+2025-02-18 00:20:34 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:20:35 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:20:35 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:20:35 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:20:35 - qa_chain - INFO - Processando pergunta: Como começar em cripto?
+2025-02-18 00:20:35 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:33 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:33 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:33 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:33 - qa_chain - INFO - Processando pergunta: Qual a melhor criptomoeda?
+2025-02-18 00:21:33 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:33 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:21:33 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:33 - qa_chain - INFO - Processando pergunta: O que é análise técnica?
+2025-02-18 00:21:33 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:35 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:35 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:35 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:35 - qa_chain - INFO - Processando pergunta: Como funciona o mercado cripto?
+2025-02-18 00:21:35 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:37 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:37 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:37 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:37 - qa_chain - INFO - Processando pergunta: Dicas para investir em cripto?
+2025-02-18 00:21:37 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:39 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:39 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:39 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:39 - qa_chain - INFO - Processando pergunta: Como escolher uma criptomoeda?
+2025-02-18 00:21:39 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:41 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:41 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:41 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:41 - qa_chain - INFO - Processando pergunta: Qual será o preço do Bitcoin amanhã?
+2025-02-18 00:21:41 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:41 - qa_chain - INFO - Processando pergunta: Você pode me garantir lucro?
+2025-02-18 00:21:41 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:41 - qa_chain - INFO - Processando pergunta: Qual a melhor corretora?
+2025-02-18 00:21:42 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:44 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:44 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:44 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:44 - qa_chain - INFO - Processando pergunta: Como funciona a sala de sinais?
+2025-02-18 00:21:44 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:44 - qa_chain - INFO - Processando pergunta: Me explica a sala de sinais
+2025-02-18 00:21:44 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:44 - qa_chain - INFO - Processando pergunta: Quero saber sobre a sala de sinais
+2025-02-18 00:21:44 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:46 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:46 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:46 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:46 - qa_chain - INFO - Processando pergunta: O que você acha de Bitcoin?
+2025-02-18 00:21:46 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:48 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:48 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:48 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:48 - qa_chain - INFO - Processando pergunta: Perdi muito dinheiro em cripto 😢
+2025-02-18 00:21:48 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:49 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:49 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:49 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:49 - qa_chain - INFO - Processando pergunta: Qual o melhor restaurante da cidade?
+2025-02-18 00:21:49 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:49 - qa_chain - INFO - Processando pergunta: Como consertar meu carro?
+2025-02-18 00:21:49 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:49 - qa_chain - INFO - Processando pergunta: Onde passar as férias?
+2025-02-18 00:21:49 - qa_chain - WARNING - Nenhum documento relevante encontrado
+2025-02-18 00:21:51 - qa_chain - INFO - QAChain inicializado com modelo de embeddings: sentence-transformers/all-MiniLM-L6-v2
+2025-02-18 00:21:51 - qa_chain - INFO - Adicionando 2 documentos ao sistema
+2025-02-18 00:21:51 - qa_chain - INFO - Documentos adicionados com sucesso
+2025-02-18 00:21:51 - qa_chain - INFO - Processando pergunta: Como começar em cripto?
+2025-02-18 00:21:51 - qa_chain - WARNING - Nenhum documento relevante encontrado
