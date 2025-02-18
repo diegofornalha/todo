@@ -72,5 +72,3 @@ docker-compose.override.yml
 .env.test.local
 .env.production.local
 .env
-
-./__pycache__
